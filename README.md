@@ -1,43 +1,53 @@
-# Astro Starter Kit: Minimal
+# どうぶつ病院宅配便 LP
 
-```sh
-npm create astro@latest -- --template minimal
+Astro 6 + Tailwind CSS 4 で構築したスマートフォン向け1ページLP。
+Figmaデザイン（[doutaku-haitatsubin SP](https://www.figma.com/design/GnP92GUPGgvsSZ9Ua8gd08/?node-id=231-479)）を1:1で再現する。
+
+## レイアウト方針
+
+- **SP固定**: モバイル幅（`--container-sp`、初期値480px）でデザインを実装
+- **PC表示**: コンテンツをスマホ幅で中央寄せ、両サイドは `bg-neutral-100`
+
+## セットアップ
+
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # dist/ に静的ファイルを出力
+npm run preview  # dist/ をローカルで確認
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+要件: Node.js 22.12+
 
-## 🚀 Project Structure
+## ディレクトリ構成
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+src/
+├── layouts/BaseLayout.astro     # html/head/meta、SP固定+PC中央寄せコンテナ
+├── components/sections/         # Figmaの各セクションを1:1で実装
+│   └── Hero.astro
+├── pages/index.astro            # LPエントリーポイント
+└── styles/global.css            # Tailwind + @theme トークン定義
+public/
+└── images/                      # Figmaから書き出した画像（webp推奨）
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## デプロイ
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+`npm run build` で生成される `dist/` を以下のいずれかにデプロイ:
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Cloudflare Pages
+1. GitHubリポジトリと連携
+2. Build command: `npm run build`
+3. Build output: `dist`
 
-## 🧞 Commands
+### Vercel
+1. GitHubリポジトリと連携、または `npx vercel`
+2. Framework preset: Astro（自動検出）
 
-All commands are run from the root of the project, from a terminal:
+## Figma連携（実装フロー）
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Claude Code 起動時にFigma MCP（`plugin:figma:figma`）のツールがロードされていること
+2. `figma:figma-implement-design` スキルでセクションごとに実装
+3. デザイントークンは `src/styles/global.css` の `@theme` ブロックに集約
+4. 画像アセットは `public/images/` に配置し、`<img>` または `astro:assets` で参照
