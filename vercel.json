@@ -3,8 +3,9 @@
   "buildCommand": "cd doutaku && npm install && npm run build",
   "outputDirectory": "doutaku/dist",
   "framework": null,
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/doutaku", "destination": "/index.html" },
-    { "source": "/doutaku/(.*)", "destination": "/$1" }
+    { "source": "/(_astro|images)/(.*)", "destination": "/doutaku/$1/$2" },
+    { "source": "/favicon.(ico|svg)", "destination": "/doutaku/favicon.$1" }
   ]
 }
