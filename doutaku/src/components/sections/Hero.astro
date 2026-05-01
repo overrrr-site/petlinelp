@@ -1,0 +1,230 @@
+---
+const ratings = [
+  { label: "App Store", score: "4.7", count: "(7,273件)" },
+  { label: "Google Play", score: "4.6", count: "(813件)" },
+];
+
+const notes = [
+  "過去にどうぶつ病院宅配便で購入されたことがなく、同一住所による注文がない方が対象。",
+  "期間: 2026/5/8(金)〜5/31(日)",
+  "お買い物かごに複数商品がある場合、最も価格の低い商品が付与対象となります。",
+  "キャンペーンコード【32588】の入力が必要です。",
+  "詳細・注意事項はキャンペーン詳細をご確認ください。",
+];
+---
+
+<section
+  class="relative w-full h-[1100px] bg-cream overflow-hidden"
+  aria-labelledby="hero-heading"
+>
+  <div class="pointer-events-none absolute top-0 left-0 w-[402px] h-[872px]">
+    <img
+      src="/images/hero/bg-sunburst.png"
+      alt=""
+      aria-hidden="true"
+      class="block w-[401px] h-[872px] ml-px object-cover mix-blend-multiply"
+    />
+  </div>
+
+  <h1 id="hero-heading" class="sr-only">どうぶつ病院宅配便 初回1+1キャンペーン</h1>
+
+  <img
+    src="/images/hero/logo.png"
+    alt="どうぶつ病院宅配便 / ペットライン株式会社"
+    width="510"
+    height="267"
+    class="absolute top-[5px] left-1/2 -translate-x-1/2 block w-[85px] h-[44px] object-contain"
+  />
+
+  <div class="absolute top-[57px] left-[37px] w-[327px] h-[215px]">
+    <img
+      src="/images/hero/campaign-banner.png"
+      alt="同じ商品が もう1個もらえる！ 2026 5.8(金)〜5.31(日)"
+      width="327"
+      height="176"
+      class="absolute top-[39px] left-0 block w-[327px] h-[176px] object-contain"
+    />
+
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[310px] h-[38px]">
+      <p
+        aria-hidden="true"
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[248px] text-center font-black text-pink leading-[23px] tracking-[-0.46px] [-webkit-text-stroke:5px_#c5385f]"
+      >
+        <span class="text-[23px] tracking-[-0.11px]">初回</span>
+        <span class="text-[30px] leading-[30px] tracking-[-0.18px]">1+1</span>
+        <span class="text-[23px] tracking-[-0.11px]">キャンペーン</span>
+      </p>
+      <img
+        src="/images/hero/title-decoration.png"
+        alt=""
+        aria-hidden="true"
+        width="310"
+        height="38"
+        class="absolute top-0 left-1/2 -translate-x-1/2 block w-[310px] h-[38px]"
+      />
+      <p
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[248px] text-center font-bold text-white leading-[23px] tracking-[-0.46px]"
+      >
+        <span class="text-[23px] tracking-[-0.11px]">初回</span>
+        <span class="text-[30px] leading-[30px] tracking-[-0.18px]">1+1</span>
+        <span class="text-[23px] tracking-[-0.11px]">キャンペーン</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="absolute top-[234px] left-[51px] w-[324px] h-[266px]">
+    <img
+      src="/images/hero/product-back.png"
+      alt=""
+      aria-hidden="true"
+      width="207"
+      height="207"
+      class="absolute top-[41px] -left-1.5 block w-[207px] h-[207px] object-contain"
+    />
+    <img
+      src="/images/hero/product-front.png"
+      alt="療法食パッケージ"
+      width="306"
+      height="306"
+      class="absolute -top-3.5 left-11 block w-[306px] h-[306px] object-contain"
+    />
+  </div>
+
+  <div
+    class="absolute top-[493px] left-10 w-[321px] flex flex-col items-center gap-3"
+  >
+    <p
+      class="text-pink text-[20px] font-bold leading-none tracking-[-0.8px] text-center pb-1 border-b-[3px] border-pink"
+    >
+      購入商品と同じものを
+    </p>
+    <p
+      class="text-pink text-[32px] font-bold leading-none tracking-[-1.28px] text-center pb-1 border-b-[3px] border-pink"
+    >
+      もう1個無料プレゼント
+    </p>
+  </div>
+
+  <section
+    class="absolute top-[585px] left-1/2 -translate-x-1/2 flex w-[365px] flex-col items-center gap-[5px] bg-pink rounded-[10px] border-[3px] border-white px-5 py-2.5"
+    aria-labelledby="hero-cta-title"
+  >
+    <div class="flex items-center gap-[5px]">
+      <img
+        src="/images/hero/bracket-left.svg"
+        alt=""
+        aria-hidden="true"
+        width="10"
+        height="18"
+        class="block w-[10px] h-[18px] shrink-0"
+      />
+      <p class="text-white text-[15px] font-bold leading-none text-center">
+        キャンペーンに参加するには
+      </p>
+      <img
+        src="/images/hero/bracket-right.svg"
+        alt=""
+        aria-hidden="true"
+        width="10"
+        height="18"
+        class="block w-[10px] h-[18px] shrink-0"
+      />
+    </div>
+
+    <h2
+      id="hero-cta-title"
+      class="text-white text-[20px] font-black leading-none tracking-[0.4px] text-center"
+    >
+      まずはアプリをダウンロード
+    </h2>
+
+    <div class="flex items-center gap-4">
+      <a
+        href="#"
+        aria-label="App Store からダウンロード"
+        class="block transition-opacity hover:opacity-80"
+      >
+        <img
+          src="/images/hero/app-store-button-img.svg"
+          alt="App Store からダウンロード"
+          width="109"
+          height="40"
+          class="block w-[109px] h-10 object-contain"
+        />
+      </a>
+      <a
+        href="#"
+        aria-label="Google Play で手に入れよう"
+        class="block transition-opacity hover:opacity-80"
+      >
+        <img
+          src="/images/hero/google-play-button-img.svg"
+          alt="Google Play で手に入れよう"
+          width="135"
+          height="40"
+          class="block w-[135px] h-10 object-contain"
+        />
+      </a>
+    </div>
+  </section>
+
+  <a
+    href="#"
+    class="absolute top-[717px] left-1/2 -translate-x-1/2 text-base text-black underline whitespace-nowrap"
+  >
+    Webサイトから購入する方はこちら
+  </a>
+
+  <p
+    class="absolute top-[750px] left-1/2 -translate-x-1/2 text-pink text-[15px] font-bold leading-[15px] whitespace-nowrap text-center"
+  >
+    ※会員登録には動物病院コードが必要です
+  </p>
+
+  <div
+    class="absolute top-[785px] left-1/2 -translate-x-1/2 flex w-[359px] h-[59px] items-center justify-center gap-2.5"
+    aria-label="アプリストア評価"
+  >
+    {
+      ratings.map((r) => (
+        <div class="flex h-[59px] flex-1 items-center justify-center gap-2.5 bg-white rounded-lg p-2.5">
+          <img
+            src="/images/hero/icon-star.svg"
+            alt=""
+            aria-hidden="true"
+            width="25"
+            height="24"
+            class="block w-[25px] h-6 shrink-0"
+          />
+          <p class="font-bold leading-[18.8px]">
+            <span class="text-navy text-[15px]">{r.label}</span>
+            <br />
+            <span class="text-pink text-[17px] leading-[21.2px]">{r.score}</span>
+            <span class="text-navy text-[15px]">&nbsp;{r.count}</span>
+          </p>
+        </div>
+      ))
+    }
+  </div>
+
+  <p
+    class="absolute top-[850px] left-1/2 -translate-x-1/2 font-antique text-black text-[15px] leading-none whitespace-nowrap text-center"
+  >
+    ※2026年1月20日現在
+  </p>
+
+  <ul
+    class="absolute top-[892px] left-1/2 -translate-x-1/2 flex w-[339px] flex-col gap-0 font-antique text-navy text-[15px] leading-[18.8px]"
+  >
+    {
+      notes.map((line) => (
+        <li class="flex gap-0.5">
+          <span aria-hidden="true" class="shrink-0">
+            ※
+          </span>
+          <span>{line}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

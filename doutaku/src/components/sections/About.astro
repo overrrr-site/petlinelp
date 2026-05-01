@@ -1,0 +1,94 @@
+---
+const sliderProducts = [1, 2, 3, 4, 5, 6];
+const sliderRepeat = 3;
+---
+
+<section
+  class="relative w-full h-[490px] bg-cream overflow-hidden"
+  aria-labelledby="about-heading"
+>
+  <h2
+    id="about-heading"
+    class="absolute top-[10px] left-1/2 -translate-x-1/2 text-pink text-[28px] font-bold leading-none whitespace-nowrap"
+  >
+    どうぶつ病院宅配便とは？
+  </h2>
+
+  <div
+    class="absolute top-[58px] left-0 w-full overflow-hidden"
+    data-about-carousel
+    aria-hidden="true"
+  >
+    <div class="flex gap-[10px] w-max" data-about-track>
+      {
+        Array.from({ length: sliderRepeat }).map(() =>
+          sliderProducts.map((n) => (
+            <img
+              src={`/images/about/slider/product-${n}.svg`}
+              alt=""
+              width="160"
+              height="186"
+              class="block w-[160px] h-[186px] shrink-0 object-contain"
+              data-about-card
+            />
+          ))
+        )
+      }
+    </div>
+  </div>
+
+  <p
+    class="absolute top-[268px] left-1/2 -translate-x-1/2 w-[286px] text-pink text-[20px] font-bold text-center leading-[28px] whitespace-nowrap"
+  >
+    療法食をお得に続ける、<br />
+    メーカー公式オンラインストア
+  </p>
+
+  <p
+    class="absolute top-[336px] left-1/2 -translate-x-1/2 w-[352px] text-navy text-[15px] font-medium text-center leading-[23px]"
+  >
+    飼い主様のかかりつけ動物病院を通じてフードを購入できるメーカー公式オンラインストアです。<br />
+    かかりつけ動物病院へ購入情報を共有できるので、<br />
+    フードのご相談もスムーズです。
+  </p>
+</section>
+
+<script>
+  (function () {
+    const carousel = document.querySelector<HTMLElement>("[data-about-carousel]");
+    const track = document.querySelector<HTMLElement>("[data-about-track]");
+    if (!carousel || !track) return;
+
+    const cards = track.querySelectorAll<HTMLElement>("[data-about-card]");
+    if (cards.length === 0) return;
+
+    const setSize = 6;
+    const gap = 10;
+    const speed = 50;
+    let offset = 0;
+    let lastTime = 0;
+
+    const getCardWidth = () => cards[0].offsetWidth;
+    const getSetWidth = () => setSize * (getCardWidth() + gap);
+    const centerOffset = () => {
+      const cw = carousel.offsetWidth;
+      const cardW = getCardWidth();
+      const step = cardW + gap;
+      return (cw - cardW) / 2 - (setSize + 1) * step;
+    };
+
+    const animate = (time: number) => {
+      if (!lastTime) lastTime = time;
+      const dt = (time - lastTime) / 1000;
+      lastTime = time;
+      offset += speed * dt;
+      const setW = getSetWidth();
+      if (offset >= setW) offset -= setW;
+      track.style.transform = `translateX(${centerOffset() - offset}px)`;
+      requestAnimationFrame(animate);
+    };
+
+    track.style.transform = `translateX(${centerOffset()}px)`;
+    requestAnimationFrame(animate);
+  })();
+</script>

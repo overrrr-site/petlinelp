@@ -1,0 +1,302 @@
+---
+const features = [
+  "会員登録・年会費 無料",
+  "7,500円以上で送料当社負担",
+  "最短当日発送",
+  "カスタマーサポート完備",
+];
+
+const legalLinks = [
+  { href: "https://drs.petline.co.jp/shop/pages/terms.aspx", label: "利用規約" },
+  {
+    href: "https://drs.petline.co.jp/shop/pages/transactionlaw.aspx",
+    label: "特定商取引法に基づく表示",
+  },
+  {
+    href: "https://drs.petline.co.jp/shop/pages/privacy.aspx",
+    label: "プライバシーポリシー",
+  },
+];
+---
+
+<section class="features" aria-label="サービスの特徴">
+  {
+    features.map((title) => (
+      <article class="features__item">
+        <img
+          class="features__item-check"
+          src="/images/footer/check.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <h3 class="features__item-title">{title}</h3>
+      </article>
+    ))
+  }
+</section>
+
+<section class="cta" aria-label="申し込みCTA">
+  <div class="cta__block cta__block--no-code">
+    <div class="cta__block-header">
+      <span class="cta__block-header-text">
+        動物病院コードをまだお持ちでない方
+      </span>
+    </div>
+    <img
+      class="cta__clip"
+      src="/images/footer/clip.svg"
+      alt=""
+      aria-hidden="true"
+    />
+    <h2 class="cta__heading">
+      まずは、お近くの<br />動物病院にご相談ください
+    </h2>
+    <p class="cta__text">
+      「どうぶつ病院宅配便」でのご購入には、<br />かかりつけ動物病院より渡される<br />「動物病院コード」が必要です。
+    </p>
+    <a
+      href="https://drs.petline.co.jp/shop/hospitallist.aspx"
+      class="cta__button"
+    >
+      <div class="cta__button-content">
+        <img
+          class="cta__button-icon"
+          src="/images/footer/search-icon.webp"
+          alt=""
+          aria-hidden="true"
+        />
+        <span class="cta__button-text">取扱動物病院を検索する</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="cta__block cta__block--with-code">
+    <div class="cta__block-header">
+      <span class="cta__block-header-text cta__block-header-text--primary">
+        動物病院コードをお持ちの方
+      </span>
+    </div>
+    <img
+      class="cta__clip"
+      src="/images/footer/clip.svg"
+      alt=""
+      aria-hidden="true"
+    />
+    <h2 class="cta__heading">今すぐアプリで始める</h2>
+    <p class="cta__text">
+      初回950円分以上の送料当社負担！<br />アプリなら2回目以降最短10秒で注文完了。
+    </p>
+    <div class="cta__app-badges">
+      <a
+        href="https://apps.apple.com/jp/app/%E3%81%A9%E3%81%86%E3%81%B6%E3%81%A4%E7%97%85%E9%99%A2%E5%AE%85%E9%85%8D%E4%BE%BF/id1670585352"
+        class="app-download__badge-link"
+        aria-label="App Store からダウンロード"
+      >
+        <img src="/images/footer/badge-appstore.svg" alt="App Store" />
+      </a>
+      <a
+        href="https://play.google.com/store/apps/details?id=jp.co.petline.members&pcampaignid=web_share"
+        class="app-download__badge-link"
+        aria-label="Google Play で手に入れよう"
+      >
+        <img src="/images/footer/badge-googleplay.svg" alt="Google Play" />
+      </a>
+    </div>
+    <a href="https://drs.petline.co.jp/shop/default.aspx" class="cta__web-link">
+      Webサイトから購入する方はこちら
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <nav class="footer__links">
+    {
+      legalLinks.map((l) => (
+        <a href={l.href} class="footer__link">
+          {l.label}
+        </a>
+      ))
+    }
+  </nav>
+</footer>
+
+<style>
+  .features {
+    background-color: #c5385f;
+    padding: 50px 20px 50px;
+    font-family: "Zen Kaku Gothic New", Helvetica, sans-serif;
+  }
+  .features__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    height: 35px;
+    padding: 0 15px;
+    margin: 0 0 10px 56px;
+    width: fit-content;
+  }
+  .features__item:last-child {
+    margin-bottom: 0;
+  }
+  .features__item-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #c5385f;
+    white-space: nowrap;
+    line-height: normal;
+    margin: 0;
+  }
+  .features__item-check {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .cta {
+    padding: 50px 18px 50px;
+    background-color: #c5385f;
+    font-family: "Zen Kaku Gothic New", Helvetica, sans-serif;
+  }
+  .cta__block {
+    position: relative;
+    width: 363px;
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 0 auto 34px;
+    text-align: center;
+    background: #ffffff;
+    padding: 54px 30px 30px;
+  }
+  .cta__block:last-child {
+    margin-bottom: 0;
+  }
+  .cta__block-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    padding: 0 20px;
+  }
+  .cta__block--no-code .cta__block-header {
+    background-color: #c5385f;
+  }
+  .cta__block--with-code .cta__block-header {
+    border: 0.75px solid #c5385f;
+  }
+  .cta__block-header-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    line-height: normal;
+  }
+  .cta__block-header-text--primary {
+    color: #c5385f;
+  }
+  .cta__clip {
+    position: absolute;
+    width: 174px;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .cta__heading {
+    font-size: 24px;
+    font-weight: 700;
+    color: #c5385f;
+    text-align: center;
+    line-height: 33px;
+    margin: 0 0 12px;
+  }
+  .cta__text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #161e3c;
+    text-align: center;
+    line-height: 21px;
+    margin-bottom: 14px;
+  }
+  .cta__block--no-code .cta__text {
+    margin-bottom: 27px;
+  }
+  .cta__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0 auto;
+    width: 280px;
+    height: 47px;
+    border: 1.9px solid #c5385f;
+    border-radius: 24px;
+    transition: transform 0.3s ease;
+  }
+  .cta__button:hover,
+  .cta__button:focus {
+    transform: translateY(-2px);
+  }
+  .cta__button-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cta__button-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #c5385f;
+    line-height: normal;
+  }
+  .cta__button-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .cta__app-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 0 auto 4px;
+  }
+  .app-download__badge-link {
+    display: block;
+    height: 44px;
+  }
+  .app-download__badge-link img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+  .cta__web-link {
+    display: block;
+    font-size: 14px;
+    color: #c5385f;
+    text-decoration: underline;
+    line-height: normal;
+    text-align: center;
+    margin-top: 23px;
+  }
+
+  .footer {
+    background-color: #c5385f;
+    padding: 50px 20px 50px;
+    text-align: center;
+    font-family: "Zen Kaku Gothic New", Helvetica, sans-serif;
+  }
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer__link {
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: underline;
+    line-height: normal;
+  }
+</style>

@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", system-ui,
+    sans-serif;
+  --font-antique:
+    "Zen Kaku Gothic Antique", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", system-ui,
+    sans-serif;
+
+  --color-pink: #c5385f;
+  --color-navy: #161e3c;
+  --color-cream: #f6efe7;
+  --color-mute: #acacac;
+
+  --container-sp: 402px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
