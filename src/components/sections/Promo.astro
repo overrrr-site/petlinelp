@@ -1,0 +1,108 @@
+---
+import { APP_STORE_URL } from "../../data/links";
+---
+
+<section
+  class="relative w-full h-[779px] bg-cream overflow-hidden"
+  aria-labelledby="promo-heading"
+>
+  <div class="absolute top-[35px] left-1/2 -translate-x-1/2 w-[310px] h-[42px]">
+    <p
+      aria-hidden="true"
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[252px] text-center font-black text-pink text-[23px] leading-none tracking-[-0.46px] [-webkit-text-stroke:5px_#c5385f]"
+    >
+      <span class="tracking-[-0.11px]">初回</span>
+      <span class="text-[30px] tracking-[-0.18px]">1+1</span>
+      <span class="tracking-[-0.11px]">キャンペーン</span>
+    </p>
+    <img
+      src="/images/promo/title-decoration.png"
+      alt=""
+      aria-hidden="true"
+      width="310"
+      height="38"
+      class="absolute top-0 left-1/2 -translate-x-1/2 block w-[310px] h-[38px]"
+    />
+    <p
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[252px] text-center font-bold text-white text-[23px] leading-none tracking-[-0.46px]"
+    >
+      <span class="tracking-[-0.11px]">初回</span>
+      <span class="text-[30px] tracking-[-0.18px]">1+1</span>
+      <span class="tracking-[-0.11px]">キャンペーン</span>
+    </p>
+  </div>
+
+  <img
+    src="/images/promo/banner-1plus1.png"
+    alt="1個買うと もう1個無料！ 初回1+1キャンペーン"
+    width="352"
+    height="189"
+    class="absolute top-[59px] left-1/2 -translate-x-1/2 block w-[352px] h-[189px] object-contain"
+  />
+
+  <div class="absolute top-[238px] left-[62px] w-[273px] h-[224px]">
+    <img
+      src="/images/promo/product-back.png"
+      alt=""
+      aria-hidden="true"
+      width="178"
+      height="178"
+      class="absolute top-[34px] -left-1.5 block w-[178px] h-[178px] object-contain"
+    />
+    <img
+      src="/images/promo/product-front.webp"
+      alt="療法食パッケージ"
+      width="264"
+      height="264"
+      class="absolute -top-3.5 left-[35px] block w-[264px] h-[264px] object-contain"
+    />
+  </div>
+
+  <div
+    class="absolute top-[472px] left-1/2 -translate-x-1/2 inline-flex items-center justify-center gap-2.5 px-2.5 py-2 bg-pink"
+  >
+    <p class="text-white text-[15px] font-bold text-center leading-[1.4] tracking-[-0.3px]">
+      過去に動物病院宅配便を<br />利用したことがない方限定
+    </p>
+  </div>
+
+  <img
+    src="/images/promo/badge-strip.png"
+    alt=""
+    aria-hidden="true"
+    width="343"
+    height="59"
+    class="absolute top-[540px] left-1/2 -translate-x-1/2 block w-[343px] h-[59px] object-contain"
+  />
+
+  <div class="absolute top-[619px] left-1/2 -translate-x-1/2 w-[362px] h-[54px]">
+    <img
+      src="/images/promo/code-banner-bg.svg"
+      alt=""
+      aria-hidden="true"
+      width="362"
+      height="54"
+      class="absolute top-0 left-0 block w-full h-full"
+    />
+    <p
+      id="promo-heading"
+      class="absolute top-[9px] left-1/2 -translate-x-1/2 w-[324px] text-navy text-[15px] font-bold text-center leading-[normal]"
+    >
+      キャンペーンコード【32588】の入力が必要です
+    </p>
+  </div>
+
+  <a
+    href={APP_STORE_URL}
+    aria-label="アプリのダウンロードはこちら"
+    class="absolute top-[679px] left-1/2 -translate-x-1/2 block w-[321px] h-[50px] transition-opacity hover:opacity-80"
+  >
+    <img
+      src="/images/promo/app-buttons.png"
+      alt="App Store / Google Play からダウンロード"
+      width="321"
+      height="50"
+      class="block w-full h-full"
+    />
+  </a>
+</section>

@@ -1,0 +1,195 @@
+---
+const reviewsBase = [
+  {
+    title: "ネットで買えるのが嬉しい",
+    body: "「このアプリを作っていただけてすごく助かりました。 どうしても病院まで購入しに行く時間が無かったりとしてたので、ネットで買えるのが嬉しいです」",
+    avatar: "/images/voices/avatar-1.png",
+    avatarSize: "w-[66px] h-[76px] top-5 left-[27px]",
+    starImg: "/images/voices/star.svg",
+  },
+  {
+    title: "再購入は10秒で完了",
+    body: "「安い簡単便利！再購入なら、本当に10秒あれば完了します。（中略）多頭飼いで大量消費するのでとても助かります。」",
+    avatar: "/images/voices/avatar-2.png",
+    avatarSize: "w-[88px] h-[79px] top-[26px] left-[18px]",
+    starImg: "/images/voices/star.svg",
+  },
+  {
+    title: "忙しくても届く安心感",
+    body: "「忙しくて病院に行けなくても、すぐに届けてもらえるので助かっています。先日は一袋プレゼントもいただけて、Food代も助かりました。」",
+    avatar: "/images/voices/avatar-3.png",
+    avatarSize: "w-[67px] h-[73px] top-[26px] left-[31px]",
+    starImg: "/images/voices/star-alt.svg",
+  },
+];
+
+const reviewsExtra = [
+  {
+    title: "重い荷物から解放された",
+    body: "「3キロを毎回持ち帰るのは結構重かったので届けてもらえるのは助かります。」",
+    avatar: "/images/voices/avatar-4.webp",
+    avatarSize: "w-[80px] h-[80px] top-[22px] left-[20px] rounded-full object-cover",
+    starImg: "/images/voices/star.svg",
+  },
+  {
+    title: "定期縛りなしが嬉しい",
+    body: "「再購入がラクラクでとても便利です。また定期購入と違って期日、回数等の縛りがなく、猫の体調に合わせて期間や個数を増減して再購入でき、とても助かります。」",
+    avatar: "/images/voices/avatar-5.webp",
+    avatarSize: "w-[80px] h-[80px] top-[22px] left-[20px] rounded-full object-cover",
+    starImg: "/images/voices/star.svg",
+  },
+];
+---
+
+<section
+  class="relative w-full bg-[#ebc6cb] flex flex-col items-center gap-[26px] pt-[50px] pb-[50px] px-[25px]"
+  aria-labelledby="voices-heading"
+>
+  <h2
+    id="voices-heading"
+    class="text-navy text-[28px] font-bold text-center leading-none"
+  >
+    ご利用者様の声(PR)
+  </h2>
+
+  <div class="flex flex-col w-[352px] items-center gap-[18px]">
+    {
+      reviewsBase.map((r) => (
+        <article class="relative w-full h-[211px] bg-white rounded-[10px] shadow-[2px_2px_5px_2px_#0000001a] overflow-hidden">
+          <img
+            src={r.avatar}
+            alt=""
+            aria-hidden="true"
+            class:list={["absolute block object-contain", r.avatarSize]}
+          />
+          <div
+            class="absolute top-[33px] left-[110px] flex items-center gap-[2px]"
+            aria-label="評価 5点"
+          >
+            {Array.from({ length: 5 }).map(() => (
+              <img
+                src={r.starImg}
+                alt=""
+                aria-hidden="true"
+                width="14"
+                height="14"
+                class="block w-[14px] h-[14px]"
+              />
+            ))}
+          </div>
+          <h3 class="absolute top-[55px] left-[110px] text-pink text-lg font-bold leading-none">
+            {r.title}
+          </h3>
+          <p class="absolute top-[107px] left-[16px] w-[320px] text-navy text-[15px] font-medium leading-[21.8px] tracking-[-0.3px]">
+            {r.body}
+          </p>
+        </article>
+      ))
+    }
+
+    <div
+      id="voicesExtra"
+      class="flex flex-col w-full items-center gap-[18px]"
+      hidden
+    >
+      {
+        reviewsExtra.map((r) => (
+          <article class="relative w-full h-[211px] bg-white rounded-[10px] shadow-[2px_2px_5px_2px_#0000001a] overflow-hidden">
+            <img
+              src={r.avatar}
+              alt=""
+              aria-hidden="true"
+              class:list={["absolute block", r.avatarSize]}
+            />
+            <div
+              class="absolute top-[33px] left-[110px] flex items-center gap-[2px]"
+              aria-label="評価 5点"
+            >
+              {Array.from({ length: 5 }).map(() => (
+                <img
+                  src={r.starImg}
+                  alt=""
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  class="block w-[14px] h-[14px]"
+                />
+              ))}
+            </div>
+            <h3 class="absolute top-[55px] left-[110px] text-pink text-lg font-bold leading-none">
+              {r.title}
+            </h3>
+            <p class="absolute top-[107px] left-[16px] w-[320px] text-navy text-[15px] font-medium leading-[21.8px] tracking-[-0.3px]">
+              {r.body}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <button
+    type="button"
+    id="voicesMoreBtn"
+    aria-expanded="false"
+    aria-controls="voicesExtra"
+    class="relative inline-flex items-center justify-center w-[179px] h-[40px] transition-opacity hover:opacity-80"
+  >
+    <img
+      src="/images/voices/btn-more-bg.svg"
+      alt=""
+      aria-hidden="true"
+      class="absolute top-0 left-0 block w-full h-full"
+    />
+    <span
+      class="relative z-10 text-pink text-[15px] font-medium leading-none [-webkit-text-stroke:0.32px_#c5385f]"
+      data-label-closed="もっと見る"
+      data-label-open="閉じる"
+    >
+      もっと見る
+    </span>
+    <img
+      src="/images/voices/arrow-down.svg"
+      alt=""
+      aria-hidden="true"
+      width="11"
+      height="8"
+      class="relative z-10 ml-2 block w-[14px] h-[8px] transition-transform duration-200"
+      data-arrow
+    />
+  </button>
+
+  <p class="self-stretch flex gap-0.5 text-navy text-[15px] leading-none">
+    <span aria-hidden="true">※</span>
+    <span class="flex-1">Google Play ユーザーレビューより引用（2023年7月〜2025年3月）</span>
+  </p>
+</section>
+
+<script>
+  (function () {
+    const btn = document.getElementById("voicesMoreBtn");
+    const extra = document.getElementById("voicesExtra");
+    if (!btn || !extra) return;
+
+    const labelEl = btn.querySelector<HTMLElement>("[data-label-closed]");
+    const arrowEl = btn.querySelector<HTMLElement>("[data-arrow]");
+
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      if (expanded) {
+        extra.setAttribute("hidden", "");
+      } else {
+        extra.removeAttribute("hidden");
+      }
+      if (labelEl) {
+        labelEl.textContent = expanded
+          ? labelEl.dataset.labelClosed ?? "もっと見る"
+          : labelEl.dataset.labelOpen ?? "閉じる";
+      }
+      if (arrowEl) {
+        arrowEl.style.transform = expanded ? "" : "rotate(180deg)";
+      }
+    });
+  })();
+</script>

@@ -1,0 +1,114 @@
+---
+const worries = [
+  "「うちの子にはずっと健康でいてほしいけど、療法食は高くて、続けるのはちょっと…」",
+  "「ネットで間違ったフードを買っていることに気付かなかった！」",
+  "「うちの子に合ったフードを選べているか不安…」",
+];
+---
+
+<section
+  class="relative w-full h-[963px] overflow-hidden"
+  style="background: linear-gradient(to bottom, var(--color-mute) 0, var(--color-mute) 882px, var(--color-cream) 882px);"
+  aria-labelledby="worries-heading"
+>
+  <div class="absolute top-[40px] left-1/2 -translate-x-1/2 w-[379px] h-[120px]">
+    <img
+      src="/images/worries/heading-bubble.svg"
+      alt=""
+      aria-hidden="true"
+      width="377"
+      height="86"
+      class="absolute top-0 left-0 block w-full h-[86px]"
+    />
+    <img
+      src="/images/worries/heading-decoration.svg"
+      alt=""
+      aria-hidden="true"
+      width="29"
+      height="33"
+      class="absolute top-[83px] left-[210px] block w-[29px] h-[33px]"
+    />
+    <h2
+      id="worries-heading"
+      class="absolute top-[15px] left-1/2 -translate-x-1/2 w-[284px] text-mute text-[20px] font-bold text-center leading-[25px]"
+    >
+      フードについて<br />
+      こんなお悩みはありませんか？
+    </h2>
+  </div>
+
+  <div
+    class="absolute top-[176px] left-[25px] flex flex-col w-[346px] items-end gap-6"
+  >
+    {
+      worries.map((text, i) => (
+        <>
+          {i > 0 && (
+            <img
+              src="/images/worries/divider.svg"
+              alt=""
+              aria-hidden="true"
+              class="block w-[347px] h-px -mx-[0.5px]"
+            />
+          )}
+          <div class="inline-flex items-start gap-2.5">
+            <img
+              src="/images/worries/quote-icon.svg"
+              alt=""
+              aria-hidden="true"
+              width="14"
+              height="24"
+              class="block shrink-0 w-[14px] h-[24px]"
+            />
+            <p class="w-[303px] text-white text-[15px] font-bold leading-[21px] tracking-[0.45px]">
+              {text}
+            </p>
+          </div>
+        </>
+      ))
+    }
+  </div>
+
+  <img
+    src="/images/worries/photo-pet-cute.webp"
+    alt=""
+    aria-hidden="true"
+    width="294"
+    height="184"
+    class="absolute top-[374px] left-1/2 -translate-x-1/2 block w-[294px] h-[184px] object-contain"
+  />
+
+  <div class="absolute top-[532px] left-0 w-[402px] h-[380px]">
+    <img
+      src="/images/worries/pink-panel.svg"
+      alt=""
+      aria-hidden="true"
+      width="402"
+      height="380"
+      class="absolute top-0 left-0 block w-full h-full"
+    />
+
+    <div class="absolute top-[60px] left-1/2 -translate-x-1/2 w-[360px] flex flex-col items-center gap-2">
+      <p class="text-white text-2xl font-bold leading-none">そんな時は…</p>
+      <p
+        class="text-white text-[32px] font-bold leading-none pb-1 border-b-[3px] border-white"
+      >
+        どうぶつ病院宅配便を
+      </p>
+      <p
+        class="text-white text-[32px] font-bold leading-none pb-1 border-b-[3px] border-white"
+      >
+        ご検討ください
+      </p>
+    </div>
+
+    <img
+      src="/images/worries/photo-vet-illustration.png"
+      alt=""
+      aria-hidden="true"
+      width="230"
+      height="160"
+      class="absolute top-[218px] left-[calc(50%-10px)] -translate-x-1/2 block w-[230px] h-[170px] object-contain"
+    />
+  </div>
+</section>

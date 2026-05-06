@@ -1,9 +1,20 @@
 @import "tailwindcss";
+@source not "../../reference";
 
 @theme {
-  --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  --font-sans:
+    "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", system-ui,
+    sans-serif;
+  --font-antique:
+    "Zen Kaku Gothic Antique", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", system-ui,
+    sans-serif;
 
-  --container-sp: 480px;
+  --color-pink: #c5385f;
+  --color-navy: #161e3c;
+  --color-cream: #f6efe7;
+  --color-mute: #acacac;
+
+  --container-sp: 402px;
 }
 
 html {
@@ -15,10 +26,4 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
