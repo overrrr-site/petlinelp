@@ -1,4 +1,6 @@
 ---
+import { APP_STORE_URL, GOOGLE_PLAY_URL, SHOP_URL } from "../../data/links";
+
 const features = [
   "会員登録・年会費 無料",
   "7,500円以上で送料当社負担",
@@ -88,21 +90,21 @@ const legalLinks = [
     </p>
     <div class="cta__app-badges">
       <a
-        href="https://apps.apple.com/jp/app/%E3%81%A9%E3%81%86%E3%81%B6%E3%81%A4%E7%97%85%E9%99%A2%E5%AE%85%E9%85%8D%E4%BE%BF/id1670585352"
+        href={APP_STORE_URL}
         class="app-download__badge-link"
         aria-label="App Store からダウンロード"
       >
         <img src="/images/footer/badge-appstore.svg" alt="App Store" />
       </a>
       <a
-        href="https://play.google.com/store/apps/details?id=jp.co.petline.members&pcampaignid=web_share"
+        href={GOOGLE_PLAY_URL}
         class="app-download__badge-link"
         aria-label="Google Play で手に入れよう"
       >
         <img src="/images/footer/badge-googleplay.svg" alt="Google Play" />
       </a>
     </div>
-    <a href="https://drs.petline.co.jp/shop/default.aspx" class="cta__web-link">
+    <a href={SHOP_URL} class="cta__web-link">
       Webサイトから購入する方はこちら
     </a>
   </div>

@@ -1,4 +1,6 @@
 ---
+import { APP_STORE_URL, GOOGLE_PLAY_URL, SHOP_URL } from "../../data/links";
+
 const ratings = [
   { label: "App Store", score: "4.7", count: "(7,273件)" },
   { label: "Google Play", score: "4.6", count: "(813件)" },
@@ -29,7 +31,7 @@ const notes = [
   <h1 id="hero-heading" class="sr-only">どうぶつ病院宅配便 初回1+1キャンペーン</h1>
 
   <img
-    src="/images/hero/logo.png"
+    src="/images/hero/logo.webp"
     alt="どうぶつ病院宅配便 / ペットライン株式会社"
     width="510"
     height="267"
@@ -82,7 +84,7 @@ const notes = [
       class="absolute top-[41px] -left-1.5 block w-[207px] h-[207px] object-contain"
     />
     <img
-      src="/images/hero/product-front.png"
+      src="/images/hero/product-front.webp"
       alt="療法食パッケージ"
       width="306"
       height="306"
@@ -140,7 +142,7 @@ const notes = [
 
     <div class="flex items-center gap-4">
       <a
-        href="#"
+        href={APP_STORE_URL}
         aria-label="App Store からダウンロード"
         class="block transition-opacity hover:opacity-80"
       >
@@ -153,23 +155,23 @@ const notes = [
         />
       </a>
       <a
-        href="#"
+        href={GOOGLE_PLAY_URL}
         aria-label="Google Play で手に入れよう"
         class="block transition-opacity hover:opacity-80"
       >
         <img
-          src="/images/hero/google-play-button-img.svg"
+          src="/images/hero/google-play-button-img.png"
           alt="Google Play で手に入れよう"
-          width="135"
+          width="104"
           height="40"
-          class="block w-[135px] h-10 object-contain"
+          class="block w-[104px] h-10 object-contain"
         />
       </a>
     </div>
   </section>
 
   <a
-    href="#"
+    href={SHOP_URL}
     class="absolute top-[717px] left-1/2 -translate-x-1/2 text-base text-black underline whitespace-nowrap"
   >
     Webサイトから購入する方はこちら
