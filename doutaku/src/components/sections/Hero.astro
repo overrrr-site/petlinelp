@@ -148,7 +148,10 @@ const notes = [
       <a
         href={APP_STORE_URL}
         aria-label="App Store からダウンロード"
-        class="block h-11 transition-opacity hover:opacity-80"
+        class="app-download__badge-link block h-11 transition-opacity hover:opacity-80"
+        data-cv="app_download"
+        data-store="app_store"
+        data-position="hero"
       >
         <img
           src="/images/footer/badge-appstore.svg"
@@ -161,7 +164,10 @@ const notes = [
       <a
         href={GOOGLE_PLAY_URL}
         aria-label="Google Play で手に入れよう"
-        class="block h-11 transition-opacity hover:opacity-80"
+        class="app-download__badge-link block h-11 transition-opacity hover:opacity-80"
+        data-cv="app_download"
+        data-store="google_play"
+        data-position="hero"
       >
         <img
           src="/images/footer/badge-googleplay.svg"
