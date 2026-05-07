@@ -109,7 +109,10 @@ import { APP_STORE_URL, GOOGLE_PLAY_URL } from "../../data/links";
     <a
       href={APP_STORE_URL}
       aria-label="App Store からダウンロード"
-      class="block w-[136px] h-[50px] transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
+      class="app-download__badge-link block w-[136px] h-[50px] transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
+      data-cv="app_download"
+      data-store="app_store"
+      data-position="promo"
     >
       <img
         src="/images/footer/badge-appstore.svg"
@@ -124,7 +127,10 @@ import { APP_STORE_URL, GOOGLE_PLAY_URL } from "../../data/links";
     <a
       href={GOOGLE_PLAY_URL}
       aria-label="Google Play で手に入れよう"
-      class="block w-[169px] h-[50px] transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
+      class="app-download__badge-link block w-[169px] h-[50px] transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
+      data-cv="app_download"
+      data-store="google_play"
+      data-position="promo"
     >
       <img
         src="/images/footer/badge-googleplay.svg"
