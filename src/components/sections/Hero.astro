@@ -11,7 +11,6 @@ const notes = [
   "期間: 2026/5/8(金)〜5/31(日)",
   "お買い物かごに複数商品がある場合、最も価格の低い商品が付与対象となります。",
   "キャンペーンコード【32588】の入力が必要です。",
-  "詳細・注意事項はキャンペーン詳細をご確認ください。",
 ];
 ---
 
@@ -35,6 +34,7 @@ const notes = [
     alt="どうぶつ病院宅配便 / ペットライン株式会社"
     width="510"
     height="267"
+    decoding="async"
     class="absolute top-[5px] left-1/2 -translate-x-1/2 block w-[85px] h-[44px] object-contain"
   />
 
@@ -44,6 +44,7 @@ const notes = [
       alt="同じ商品が もう1個もらえる！ 2026 5.8(金)〜5.31(日)"
       width="327"
       height="176"
+      decoding="async"
       class="absolute top-[39px] left-0 block w-[327px] h-[176px] object-contain"
     />
 
@@ -88,6 +89,9 @@ const notes = [
       alt="療法食パッケージ"
       width="306"
       height="306"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
       class="absolute -top-3.5 left-11 block w-[306px] h-[306px] object-contain"
     />
   </div>
@@ -140,31 +144,31 @@ const notes = [
       まずはアプリをダウンロード
     </h2>
 
-    <div class="flex items-center gap-4">
+    <div class="flex items-center justify-center gap-4">
       <a
         href={APP_STORE_URL}
         aria-label="App Store からダウンロード"
-        class="block transition-opacity hover:opacity-80"
+        class="block h-11 transition-opacity hover:opacity-80"
       >
         <img
-          src="/images/hero/app-store-button-img.svg"
+          src="/images/footer/badge-appstore.svg"
           alt="App Store からダウンロード"
           width="109"
           height="40"
-          class="block w-[109px] h-10 object-contain"
+          class="block h-full w-auto"
         />
       </a>
       <a
         href={GOOGLE_PLAY_URL}
         aria-label="Google Play で手に入れよう"
-        class="block transition-opacity hover:opacity-80"
+        class="block h-11 transition-opacity hover:opacity-80"
       >
         <img
-          src="/images/hero/google-play-button-img.png"
+          src="/images/footer/badge-googleplay.svg"
           alt="Google Play で手に入れよう"
-          width="104"
-          height="40"
-          class="block w-[104px] h-10 object-contain"
+          width="239"
+          height="71"
+          class="block h-full w-auto"
         />
       </a>
     </div>
@@ -228,5 +232,13 @@ const notes = [
         </li>
       ))
     }
+    <li class="flex gap-0.5">
+      <span aria-hidden="true" class="shrink-0">※</span>
+      <span>
+        詳細・注意事項は<a href="#campaign-details" class="text-navy underline"
+          >キャンペーン詳細</a
+        >をご確認ください。
+      </span>
+    </li>
   </ul>
 </section>

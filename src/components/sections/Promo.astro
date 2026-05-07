@@ -1,5 +1,5 @@
 ---
-import { APP_STORE_URL } from "../../data/links";
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "../../data/links";
 ---
 
 <section
@@ -37,6 +37,8 @@ import { APP_STORE_URL } from "../../data/links";
     alt="1個買うと もう1個無料！ 初回1+1キャンペーン"
     width="352"
     height="189"
+    loading="lazy"
+    decoding="async"
     class="absolute top-[59px] left-1/2 -translate-x-1/2 block w-[352px] h-[189px] object-contain"
   />
 
@@ -47,6 +49,8 @@ import { APP_STORE_URL } from "../../data/links";
       aria-hidden="true"
       width="178"
       height="178"
+      loading="lazy"
+      decoding="async"
       class="absolute top-[34px] -left-1.5 block w-[178px] h-[178px] object-contain"
     />
     <img
@@ -54,15 +58,18 @@ import { APP_STORE_URL } from "../../data/links";
       alt="療法食パッケージ"
       width="264"
       height="264"
+      loading="lazy"
+      decoding="async"
       class="absolute -top-3.5 left-[35px] block w-[264px] h-[264px] object-contain"
     />
   </div>
 
   <div
-    class="absolute top-[472px] left-1/2 -translate-x-1/2 inline-flex items-center justify-center gap-2.5 px-2.5 py-2 bg-pink"
+    class="absolute top-[472px] left-1/2 -translate-x-1/2 inline-flex items-center justify-center gap-2.5 px-5 py-2 bg-pink"
   >
     <p class="text-white text-[15px] font-bold text-center leading-[1.4] tracking-[-0.3px]">
-      過去に動物病院宅配便を<br />利用したことがない方限定
+      <span class="block whitespace-nowrap">初めてどうぶつ病院宅配便で</span>
+      <span class="block whitespace-nowrap">購入される方限定</span>
     </p>
   </div>
 
@@ -72,6 +79,8 @@ import { APP_STORE_URL } from "../../data/links";
     aria-hidden="true"
     width="343"
     height="59"
+    loading="lazy"
+    decoding="async"
     class="absolute top-[540px] left-1/2 -translate-x-1/2 block w-[343px] h-[59px] object-contain"
   />
 
@@ -82,6 +91,8 @@ import { APP_STORE_URL } from "../../data/links";
       aria-hidden="true"
       width="362"
       height="54"
+      loading="lazy"
+      decoding="async"
       class="absolute top-0 left-0 block w-full h-full"
     />
     <p
@@ -92,17 +103,38 @@ import { APP_STORE_URL } from "../../data/links";
     </p>
   </div>
 
-  <a
-    href={APP_STORE_URL}
-    aria-label="アプリのダウンロードはこちら"
-    class="absolute top-[679px] left-1/2 -translate-x-1/2 block w-[321px] h-[50px] transition-opacity hover:opacity-80"
+  <div
+    class="absolute top-[679px] left-1/2 -translate-x-1/2 flex w-[321px] h-[50px] items-center justify-between"
   >
-    <img
-      src="/images/promo/app-buttons.png"
-      alt="App Store / Google Play からダウンロード"
-      width="321"
-      height="50"
-      class="block w-full h-full"
-    />
-  </a>
+    <a
+      href={APP_STORE_URL}
+      aria-label="App Store からダウンロード"
+      class="block w-[136px] h-[50px] transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
+    >
+      <img
+        src="/images/footer/badge-appstore.svg"
+        alt="App Store からダウンロード"
+        width="109"
+        height="40"
+        loading="lazy"
+        decoding="async"
+        class="block w-full h-full object-contain"
+      />
+    </a>
+    <a
+      href={GOOGLE_PLAY_URL}
+      aria-label="Google Play で手に入れよう"
+      class="block w-[169px] h-[50px] transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
+    >
+      <img
+        src="/images/footer/badge-googleplay.svg"
+        alt="Google Play で手に入れよう"
+        width="239"
+        height="71"
+        loading="lazy"
+        decoding="async"
+        class="block w-full h-full object-contain"
+      />
+    </a>
+  </div>
 </section>
