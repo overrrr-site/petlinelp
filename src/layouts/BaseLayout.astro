@@ -40,12 +40,19 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://example.com
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/hero/product-front.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
     />
   </head>
   <body class="bg-neutral-100 text-navy">
