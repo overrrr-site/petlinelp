@@ -9,7 +9,9 @@
     "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", system-ui,
     sans-serif;
 
-  --color-pink: #c5385f;
+  --color-pink: #d31c5f;
+  --color-pink-text: #d31c5f;
+  --color-offer-amount: #ff005d;
   --color-navy: #161e3c;
   --color-cream: #f6efe7;
   --color-mute: #acacac;

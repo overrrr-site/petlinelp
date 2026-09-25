@@ -1,4 +1,5 @@
 ---
+import { assetPath } from "../../utils/assetPath";
 import { APP_STORE_URL, GOOGLE_PLAY_URL, SHOP_URL } from "../../data/links";
 
 const features = [
@@ -27,7 +28,7 @@ const legalLinks = [
       <article class="features__item">
         <img
           class="features__item-check"
-          src="/images/footer/check.svg"
+          src={assetPath("/images/footer/check.svg")}
           alt=""
           aria-hidden="true"
         />
@@ -46,7 +47,7 @@ const legalLinks = [
     </div>
     <img
       class="cta__clip"
-      src="/images/footer/clip.svg"
+      src={assetPath("/images/footer/clip.svg")}
       alt=""
       aria-hidden="true"
     />
@@ -63,7 +64,7 @@ const legalLinks = [
       <div class="cta__button-content">
         <img
           class="cta__button-icon"
-          src="/images/footer/search-icon.webp"
+          src={assetPath("/images/footer/search-icon.webp")}
           alt=""
           aria-hidden="true"
         />
@@ -80,11 +81,12 @@ const legalLinks = [
     </div>
     <img
       class="cta__clip"
-      src="/images/footer/clip.svg"
+      src={assetPath("/images/footer/clip.svg")}
       alt=""
       aria-hidden="true"
     />
     <h2 class="cta__heading">今すぐアプリで始める</h2>
+    <p class="cta__offer">初回<span class="text-offer-amount">950円分</span>以上の送料当社負担！</p>
     <p class="cta__text">
       アプリなら2回目以降最短10秒で注文完了。
     </p>
@@ -97,7 +99,7 @@ const legalLinks = [
         data-store="app_store"
         data-position="footer"
       >
-        <img src="/images/footer/badge-appstore.svg" alt="App Store" />
+        <img src={assetPath("/images/footer/badge-appstore.svg")} alt="App Store" />
       </a>
       <a
         href={GOOGLE_PLAY_URL}
@@ -107,7 +109,7 @@ const legalLinks = [
         data-store="google_play"
         data-position="footer"
       >
-        <img src="/images/footer/badge-googleplay.svg" alt="Google Play" />
+        <img src={assetPath("/images/footer/badge-googleplay.svg")} alt="Google Play" />
       </a>
     </div>
     <a href={SHOP_URL} class="cta__web-link">
@@ -130,7 +132,7 @@ const legalLinks = [
 
 <style>
   .features {
-    background-color: #c5385f;
+    background-color: #d31c5f;
     padding: 50px 20px 50px;
     font-family: "Zen Kaku Gothic New", Helvetica, sans-serif;
   }
@@ -150,7 +152,7 @@ const legalLinks = [
   .features__item-title {
     font-size: 16px;
     font-weight: 700;
-    color: #c5385f;
+    color: var(--color-pink-text);
     white-space: nowrap;
     line-height: normal;
     margin: 0;
@@ -163,7 +165,7 @@ const legalLinks = [
 
   .cta {
     padding: 50px 18px 50px;
-    background-color: #c5385f;
+    background-color: #d31c5f;
     font-family: "Zen Kaku Gothic New", Helvetica, sans-serif;
   }
   .cta__block {
@@ -189,10 +191,10 @@ const legalLinks = [
     padding: 0 20px;
   }
   .cta__block--no-code .cta__block-header {
-    background-color: #c5385f;
+    background-color: #d31c5f;
   }
   .cta__block--with-code .cta__block-header {
-    border: 0.75px solid #c5385f;
+    border: 0.75px solid #d31c5f;
   }
   .cta__block-header-text {
     font-size: 14px;
@@ -202,7 +204,7 @@ const legalLinks = [
     line-height: normal;
   }
   .cta__block-header-text--primary {
-    color: #c5385f;
+    color: var(--color-pink-text);
   }
   .cta__clip {
     position: absolute;
@@ -216,10 +218,18 @@ const legalLinks = [
   .cta__heading {
     font-size: 24px;
     font-weight: 700;
-    color: #c5385f;
+    color: var(--color-pink-text);
     text-align: center;
     line-height: 33px;
     margin: 0 0 12px;
+  }
+  .cta__offer {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-pink-text);
+    text-align: center;
+    line-height: 1.4;
+    margin: 0 0 6px;
   }
   .cta__text {
     font-size: 14px;
@@ -240,7 +250,7 @@ const legalLinks = [
     margin: 0 auto;
     width: 280px;
     height: 47px;
-    border: 1.9px solid #c5385f;
+    border: 1.9px solid #d31c5f;
     border-radius: 24px;
     transition: transform 0.3s ease;
   }
@@ -256,7 +266,7 @@ const legalLinks = [
   .cta__button-text {
     font-size: 16px;
     font-weight: 700;
-    color: #c5385f;
+    color: var(--color-pink-text);
     line-height: normal;
   }
   .cta__button-icon {
@@ -282,7 +292,7 @@ const legalLinks = [
   .cta__web-link {
     display: block;
     font-size: 14px;
-    color: #c5385f;
+    color: var(--color-pink-text);
     text-decoration: underline;
     line-height: normal;
     text-align: center;
@@ -290,7 +300,7 @@ const legalLinks = [
   }
 
   .footer {
-    background-color: #c5385f;
+    background-color: #d31c5f;
     padding: 50px 20px 50px;
     text-align: center;
     font-family: "Zen Kaku Gothic New", Helvetica, sans-serif;
@@ -306,5 +316,13 @@ const legalLinks = [
     color: #ffffff;
     text-decoration: underline;
     line-height: normal;
+  }
+  @media (max-width: 360px) {
+    .features__item { margin-left: 20px; }
+    .cta__block { padding-inline: 16px; }
+    .cta__block-header { padding-inline: 8px; }
+    .cta__button { max-width: 100%; }
+    .cta__app-badges { gap: 10px; }
+    .app-download__badge-link { height: 38px; }
   }
 </style>

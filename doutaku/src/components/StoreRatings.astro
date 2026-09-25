@@ -1,0 +1,22 @@
+---
+import { assetPath } from "../utils/assetPath";
+// Retain the verified values from the existing LP rather than the older Figma copy.
+const ratings = [
+  { label: "App Store", score: "4.7", count: "7,471" },
+  { label: "Google Play", score: "4.5", count: "842" },
+];
+---
+<section class="lp-ratings" aria-label="アプリストア評価">
+  <img class="lp-canvas" src={assetPath("/images/figma/ratings-decoration.svg")} alt="" loading="lazy" />
+  <div class="lp-ratings__stores">
+    {ratings.map(rating => <div class="lp-ratings__store">
+      <h2>{rating.label}</h2>
+      <p class="lp-ratings__score" aria-label={`5点満点中${rating.score}点`}>
+        <img src={assetPath("/images/figma/rating-star.svg")} alt="" width="82" height="80" loading="lazy" />
+        <strong>{rating.score}</strong><span>/5</span>
+      </p>
+      <p class="lp-ratings__count">({rating.count}<span>件</span>)</p>
+    </div>)}
+  </div>
+  <p class="lp-ratings__date">※2026年9月16日現在</p>
+</section>

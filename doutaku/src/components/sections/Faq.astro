@@ -1,4 +1,12 @@
 ---
+import { assetPath } from "../../utils/assetPath";
+import {
+  CAMPAIGN_CODE,
+  CAMPAIGN_NAME,
+  FREE_SHIPPING_THRESHOLD,
+  NORMAL_SHIPPING_FEE,
+} from "../../data/campaign";
+
 const faqs = [
   {
     q: "動物病院コードはどこでもらえますか？",
@@ -15,15 +23,19 @@ const faqs = [
   },
   {
     q: "会員登録済みですが、キャンペーンの対象になりますか？",
-    a: `会員登録済みの方でも、初めて購入される場合はキャンペーンの対象となります。ただし、過去に一度でもご購入いただいている場合や同一住所でのご注文がある場合は対象外となります。`,
+    a: `会員登録済みの方でも、初めて購入される場合はキャンペーンの対象となります。ただし、過去に一度でもご購入いただいている場合は、購入するブランドや製品が異なっても対象外となります。`,
   },
   {
-    q: "初回1+1キャンペーンの対象商品は？",
-    a: `どうぶつ病院宅配便で取り扱っているすべての商品が対象です。お買い物かごに複数の商品がある場合は、最も価格の低い商品1点が無料プレゼントの対象となります。`,
+    q: `${CAMPAIGN_NAME}の対象商品は？`,
+    a: `どうぶつ病院宅配便で取り扱っているすべての商品が対象です。キャンペーン期間中の初回ご注文は、ご注文金額にかかわらず送料を当社負担でお届けします。`,
+  },
+  {
+    q: "キャンペーンコードはどこで入力しますか？",
+    a: `ご注文確認画面の「キャンペーンコード」欄に【${CAMPAIGN_CODE}】を入力してください。コードの入力がない場合、キャンペーンは適用されませんのでご注意ください。`,
   },
   {
     q: "送料はいくらですか？",
-    a: `通常、商品合計金額が7,500円（税込）以上の場合は送料当社負担です。7,500円未満の場合は送料950円（税込）、沖縄県は2,500円（税込）となります。`,
+    a: `通常、商品合計金額が${FREE_SHIPPING_THRESHOLD}以上の場合は送料当社負担です。${FREE_SHIPPING_THRESHOLD}未満の場合は送料${NORMAL_SHIPPING_FEE}、沖縄県は2,500円（税込）となります。本キャンペーン期間中は、初回ご購入の方は金額にかかわらず送料を当社負担いたします。`,
   },
   {
     q: "どのくらいで届きますか？",
@@ -49,11 +61,11 @@ const faqs = [
         <summary class="faq__question">
           <img
             class="faq__icon"
-            src={
+            src={assetPath(
               item.iconFirst
                 ? "/images/faq/icon-q-first.webp"
                 : "/images/faq/icon-q.webp"
-            }
+            )}
             alt=""
             aria-hidden="true"
           />
@@ -93,7 +105,7 @@ const faqs = [
     font-weight: 700;
     text-align: center;
     line-height: normal;
-    color: #c5385f;
+    color: var(--color-pink-text);
     margin: 0 0 25px;
   }
   .faq__item {
@@ -131,7 +143,7 @@ const faqs = [
   .faq__question-text {
     font-size: 16px;
     font-weight: 700;
-    color: #c5385f;
+    color: var(--color-pink-text);
     line-height: normal;
     margin: 0;
   }
@@ -148,7 +160,7 @@ const faqs = [
   }
   .faq__answer-code {
     font-weight: 700;
-    color: #c5385f;
+    color: var(--color-pink-text);
   }
   .faq__answer-link {
     font-weight: 700;

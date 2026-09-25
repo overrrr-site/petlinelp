@@ -1,4 +1,5 @@
 ---
+import { assetPath } from "../../utils/assetPath";
 const reviewsBase = [
   {
     title: "ネットで買えるのが嬉しい",
@@ -52,12 +53,12 @@ const reviewsExtra = [
     ご利用者様の声(PR)
   </h2>
 
-  <div class="flex flex-col w-[352px] items-center gap-[18px]">
+  <div class="voices__cards flex flex-col w-[352px] items-center gap-[18px]">
     {
       reviewsBase.map((r) => (
-        <article class="relative w-full h-[211px] bg-white rounded-[10px] shadow-[2px_2px_5px_2px_#0000001a] overflow-hidden">
+        <article class="voices__card relative w-full h-[211px] bg-white rounded-[10px] shadow-[2px_2px_5px_2px_#0000001a] overflow-hidden">
           <img
-            src={r.avatar}
+            src={assetPath(r.avatar)}
             alt=""
             aria-hidden="true"
             loading="lazy"
@@ -70,7 +71,7 @@ const reviewsExtra = [
           >
             {Array.from({ length: 5 }).map(() => (
               <img
-                src={r.starImg}
+                src={assetPath(r.starImg)}
                 alt=""
                 aria-hidden="true"
                 width="14"
@@ -81,10 +82,10 @@ const reviewsExtra = [
               />
             ))}
           </div>
-          <h3 class="absolute top-[55px] left-[110px] text-pink text-lg font-bold leading-none">
+          <h3 class="voices__title absolute top-[55px] left-[110px] text-pink-text text-lg font-bold leading-none">
             {r.title}
           </h3>
-          <p class="absolute top-[107px] left-[16px] w-[320px] text-navy text-[15px] font-medium leading-[21.8px] tracking-[-0.3px]">
+          <p class="voices__body absolute top-[107px] left-[16px] w-[320px] text-navy text-[15px] font-medium leading-[21.8px] tracking-[-0.3px]">
             {r.body}
           </p>
         </article>
@@ -98,9 +99,9 @@ const reviewsExtra = [
     >
       {
         reviewsExtra.map((r) => (
-          <article class="relative w-full h-[211px] bg-white rounded-[10px] shadow-[2px_2px_5px_2px_#0000001a] overflow-hidden">
+          <article class="voices__card relative w-full h-[211px] bg-white rounded-[10px] shadow-[2px_2px_5px_2px_#0000001a] overflow-hidden">
             <img
-              src={r.avatar}
+              src={assetPath(r.avatar)}
               alt=""
               aria-hidden="true"
               loading="lazy"
@@ -113,7 +114,7 @@ const reviewsExtra = [
             >
               {Array.from({ length: 5 }).map(() => (
                 <img
-                  src={r.starImg}
+                  src={assetPath(r.starImg)}
                   alt=""
                   aria-hidden="true"
                   width="14"
@@ -124,10 +125,10 @@ const reviewsExtra = [
                 />
               ))}
             </div>
-            <h3 class="absolute top-[55px] left-[110px] text-pink text-lg font-bold leading-none">
+            <h3 class="voices__title absolute top-[55px] left-[110px] text-pink-text text-lg font-bold leading-none">
               {r.title}
             </h3>
-            <p class="absolute top-[107px] left-[16px] w-[320px] text-navy text-[15px] font-medium leading-[21.8px] tracking-[-0.3px]">
+            <p class="voices__body absolute top-[107px] left-[16px] w-[320px] text-navy text-[15px] font-medium leading-[21.8px] tracking-[-0.3px]">
               {r.body}
             </p>
           </article>
@@ -144,7 +145,7 @@ const reviewsExtra = [
     class="relative inline-flex items-center justify-center w-[179px] h-[40px] transition-opacity hover:opacity-80"
   >
     <img
-      src="/images/voices/btn-more-bg.svg"
+      src={assetPath("/images/voices/btn-more-bg.svg")}
       alt=""
       aria-hidden="true"
       loading="lazy"
@@ -152,14 +153,14 @@ const reviewsExtra = [
       class="absolute top-0 left-0 block w-full h-full"
     />
     <span
-      class="relative z-10 text-pink text-[15px] font-medium leading-none [-webkit-text-stroke:0.32px_#c5385f]"
+      class="relative z-10 text-pink-text text-[15px] font-medium leading-none [-webkit-text-stroke:0.32px_#d31c5f]"
       data-label-closed="もっと見る"
       data-label-open="閉じる"
     >
       もっと見る
     </span>
     <img
-      src="/images/voices/arrow-down.svg"
+      src={assetPath("/images/voices/arrow-down.svg")}
       alt=""
       aria-hidden="true"
       width="11"
@@ -205,3 +206,18 @@ const reviewsExtra = [
     });
   })();
 </script>
+
+<style>
+  @media (max-width: 380px) {
+    .voices__cards { max-width: 100%; }
+    .voices__card { height: auto; min-height: 211px; }
+    .voices__title { right: 16px; font-size: 16px; line-height: 1.35; }
+    .voices__body {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: auto;
+      margin: 107px 16px 16px;
+    }
+  }
+</style>

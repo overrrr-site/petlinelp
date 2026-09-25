@@ -1,0 +1,158 @@
+/* LP layout: hero 600 × 1108; promo 600 × 928; details 875 × 851.
+   Container units preserve their composition within the existing 402px LP. */
+.lp-hero-section, .lp-promo-section, .lp-details-section, .lp-ratings {
+  --lp-rose: #d31c5f;
+  --lp-rose-text: var(--color-pink-text);
+  --lp-navy: #071d3f;
+  font-family: var(--font-sans);
+  color: var(--lp-navy);
+}
+.lp-hero-section, .lp-promo-section { background: #faf5ed; }
+.lp-stage {
+  position: relative;
+  container-type: inline-size;
+  --unit: calc(100cqw / 600);
+  width: 100%;
+  aspect-ratio: 600 / 1050;
+  isolation: isolate;
+}
+.lp-stage p, .lp-stage h1, .lp-stage h2, .lp-stage h3 { margin: 0; }
+.lp-stage img { display: block; object-fit: contain; }
+.lp-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.lp-stage h1 { font-weight: 900; }
+/* Use Noto Sans JP only for Black-weight Japanese display text. */
+.lp-stage h1,
+.lp-offer__amount,
+.lp-offer__shipping,
+.lp-hero__cta-title,
+.lp-promo__title,
+.lp-details__period h3 {
+  font-family: "Noto Sans JP", var(--font-sans);
+}
+.lp-stage a, .lp-coupon { -webkit-tap-highlight-color: transparent; }
+.lp-stage a:hover, .lp-coupon:hover { opacity: .85; }
+.lp-stage a:focus-visible, .lp-coupon:focus-visible { outline: 3px solid #176cb3; outline-offset: 3px; }
+.lp-offer, .lp-badges { display: contents; }
+.lp-offer__label { border-radius: 999px; background: var(--lp-rose); color: white; text-align: center; font-weight: 700; }
+.lp-offer__amount { display: flex; align-items: baseline; justify-content: center; white-space: nowrap; font-weight: 900; color: var(--color-offer-amount); }
+.lp-offer__amount strong, .lp-coupon__code { font-family: "Roboto", sans-serif; font-weight: 900; }
+.lp-offer__shipping { color: var(--lp-rose-text); text-align: center; font-weight: 900; white-space: nowrap; }
+.lp-offer__date { text-align: center; font-weight: 700; white-space: nowrap; }
+.lp-offer--hero .lp-offer__more, .lp-offer--promo .lp-offer__more { color: var(--lp-navy); }
+.lp-hero__cta-background { border-radius: calc(21 * var(--unit)); background: var(--lp-rose); }
+.lp-hero__cta-title { color: white; font-weight: 900; white-space: nowrap; }
+.lp-hero__web { text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+.lp-badges__link { display: block; }
+.lp-badges__link img { width: 100%; height: 100%; }
+.lp-coupon { position: absolute; display: block; padding: 0; border: 0; background: transparent; color: var(--lp-navy); cursor: pointer; text-align: left; }
+.lp-coupon__shape { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lp-coupon__instruction, .lp-coupon__label { font-weight: 700; white-space: nowrap; }
+.lp-coupon__label, .lp-coupon__code { color: var(--lp-rose-text); text-align: center; }
+.lp-coupon--hero .lp-coupon__label { background: #f7e8e8; border-radius: calc(9 * var(--unit)); }
+.lp-coupon--promo { color: white; }
+.lp-coupon--promo .lp-coupon__label, .lp-coupon--promo .lp-coupon__code { color: white; }
+.lp-coupon--promo .lp-coupon__hint { font-weight: 500; white-space: nowrap; text-align: center; }
+.lp-coupon--hero .lp-coupon__code, .lp-coupon--promo .lp-coupon__code { font-weight: 700; }
+.lp-hero__member-note { position: absolute; left: calc(30 * var(--unit)); top: calc(843.0 * var(--unit)); width: calc(540 * var(--unit)); font-size: calc(18 * var(--unit)); line-height: calc(28 * var(--unit)); text-align: center; font-weight: 700; color: var(--lp-rose-text); }
+.lp-hero { aspect-ratio: 600 / 1108; }
+.lp-promo { aspect-ratio: 600 / 928; }
+.lp-hero > .lp-canvas { top: calc(-20.0 * var(--unit)); height: calc(1050 * var(--unit)); }
+.lp-hero .lp-hero__cta-decoration { top: calc(58.0 * var(--unit)); }
+.lp-hero__heading { position: absolute; left: calc(70 * var(--unit)); top: calc(87 * var(--unit)); width: calc(462 * var(--unit));  font-size: calc(24 * var(--unit));  line-height: calc(58 * var(--unit));  text-align: center;  white-space: nowrap; }
+.lp-details__heading img { width: 100%; height: auto; }
+.lp-details__heading { position: absolute; left: calc(77.5 * var(--unit)); top: calc(134 * var(--unit)); width: calc(720 * var(--unit)); }
+.lp-hero__notes { margin: 0; padding: 20px 25px 32px; font-size: 13px; line-height: 1.65; list-style: none; }
+.lp-hero__notes li { display: flex; gap: 2px; }
+.lp-hero__notes a { text-decoration: underline; text-underline-offset: 2px; }
+.lp-promo__title { text-align: center; font-weight: 900; white-space: nowrap; }
+.lp-promo__conditions { background: white; border: calc(2 * var(--unit)) solid #d996ae; border-radius: calc(24 * var(--unit)); }
+.lp-promo__eligibility { font-weight: 700; text-align: center; }
+.lp-promo__conditions::after { content: ""; position: absolute; top: calc(90 * var(--unit)); left: calc(24 * var(--unit)); width: calc(474 * var(--unit)); height: calc(1.4 * var(--unit)); background: #d996ae; }
+.lp-promo__period-label { text-align: center; color: var(--lp-rose-text); background: #f8e9ed; border-radius: calc(14 * var(--unit)); font-weight: 700; }
+.lp-promo__date, .lp-promo__download { text-align: center; font-weight: 700; white-space: nowrap; }
+.lp-promo-section { padding-bottom: 24px; }
+.lp-promo__loyalty { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 0 25px; padding: 14px 12px 12px; border: 2px solid var(--lp-rose); border-radius: 10px; background: white; text-align: center; font-size: 16px; font-weight: 700; line-height: 1.4; }
+.lp-promo__loyalty-label { border-radius: 999px; background: var(--lp-rose); color: white; font-size: 12px; padding: 3px 12px; }
+.lp-promo__loyalty strong { color: var(--lp-rose-text); }
+.lp-promo__loyalty-notes { font-size: 11px; font-weight: 400; line-height: 1.5; }
+.lp-details-section { background: #eed3d4; }
+.lp-details { --unit: calc(100cqw / 875); aspect-ratio: 875 / 851; }
+.lp-details__period { background: white; border-radius: calc(49 * var(--unit)); }
+.lp-details__period h3 { font-weight: 900; white-space: nowrap; }
+.lp-details__period p { font-weight: 500; white-space: nowrap; }
+.lp-details__terms { padding: 4px 25px 50px; }
+.lp-ratings { position: relative; container-type: inline-size; width: 100%; aspect-ratio: 2170 / 725; background: #fdfaf5; --unit: calc(100cqw / 2170); }
+.lp-ratings__stores { position: absolute; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(187.641 * var(--unit)); left: calc(256.57 * var(--unit)); top: calc(137.86 * var(--unit)); width: calc(1693.877 * var(--unit)); }
+.lp-ratings__store { text-align: center; }
+.lp-ratings h2 { font: 700 calc(76 * var(--unit)) / calc(90 * var(--unit)) "Inter", sans-serif; letter-spacing: calc(-1.2 * var(--unit)); white-space: nowrap; }
+.lp-ratings__score { display: flex; align-items: baseline; justify-content: center; gap: calc(18 * var(--unit)); margin-top: calc(-18 * var(--unit)); padding: calc(28 * var(--unit)) calc(42 * var(--unit)) 0 0; color: var(--lp-rose-text); }
+.lp-ratings__score img { align-self: center; width: calc(82 * var(--unit)); height: calc(80 * var(--unit)); }
+.lp-ratings__score strong { font: 900 calc(230 * var(--unit)) / calc(236 * var(--unit)) "Roboto", sans-serif; letter-spacing: calc(-18 * var(--unit)); }
+.lp-ratings__score > span { color: var(--lp-navy); font: 700 calc(64 * var(--unit)) / calc(74 * var(--unit)) "Arimo", sans-serif; }
+.lp-ratings__count { margin-top: calc(-18 * var(--unit)); font: 700 calc(64 * var(--unit)) / calc(80 * var(--unit)) "Arimo", sans-serif; letter-spacing: calc(.1 * var(--unit)); }
+.lp-ratings__count span { font-family: var(--font-sans); }
+.lp-ratings__date { position: absolute; top: calc(589 * var(--unit)); width: 100%; text-align: center; font-size: max(10px, calc(41 * var(--unit))); line-height: 1.4; }
+.lp-hero__logo { position: absolute; left: calc(232 * var(--unit)); top: calc(6 * var(--unit)); width: calc(136 * var(--unit)); height: calc(71.238 * var(--unit));  }
+.lp-offer--hero .lp-offer__label { position: absolute; left: calc(152 * var(--unit)); top: calc(152 * var(--unit)); width: calc(296 * var(--unit)); height: calc(32 * var(--unit)); font-size: calc(18 * var(--unit)); line-height: calc(32 * var(--unit));  }
+.lp-offer--hero .lp-offer__date { position: absolute; left: calc(147 * var(--unit)); top: calc(364.0 * var(--unit)); width: calc(305 * var(--unit)); font-size: calc(21 * var(--unit)); line-height: calc(31 * var(--unit));  }
+.lp-coupon--hero { position: absolute; left: calc(41 * var(--unit)); top: calc(720.0 * var(--unit)); width: calc(519 * var(--unit)); height: calc(97 * var(--unit));  }
+.lp-coupon--hero .lp-coupon__instruction { position: absolute; left: calc(37 * var(--unit)); top: calc(23 * var(--unit)); width: calc(263 * var(--unit)); font-size: calc(21 * var(--unit)); line-height: calc(27 * var(--unit));  }
+.lp-hero__cta-background { position: absolute; left: calc(35 * var(--unit)); top: calc(887.0 * var(--unit)); width: calc(530 * var(--unit)); height: calc(137 * var(--unit));  }
+.lp-hero__cta-title { position: absolute; left: calc(158 * var(--unit)); top: calc(905.0 * var(--unit)); width: calc(323 * var(--unit)); font-size: calc(23 * var(--unit)); line-height: calc(35 * var(--unit));  }
+.lp-badges--hero .lp-badges__link--app_store { position: absolute; left: calc(110 * var(--unit)); top: calc(949.0 * var(--unit)); width: calc(178 * var(--unit)); height: calc(65.4 * var(--unit));  }
+.lp-badges--hero .lp-badges__link--google_play { position: absolute; left: calc(310 * var(--unit)); top: calc(952.0 * var(--unit)); width: calc(181 * var(--unit)); height: calc(53.77 * var(--unit));  }
+.lp-hero__web { position: absolute; left: calc(138 * var(--unit)); top: calc(1047.0 * var(--unit)); width: calc(307 * var(--unit)); font-size: calc(18.5 * var(--unit)); line-height: calc(28 * var(--unit));  }
+.lp-offer--promo .lp-offer__label { position: absolute; left: calc(152 * var(--unit)); top: calc(30 * var(--unit)); width: calc(296 * var(--unit)); height: calc(32 * var(--unit)); font-size: calc(18 * var(--unit)); line-height: calc(32 * var(--unit));  }
+.lp-offer--hero .lp-offer__amount { position: absolute; left: calc(87 * var(--unit)); top: calc(181 * var(--unit)); width: calc(429 * var(--unit)); font-size: calc(44 * var(--unit)); line-height: calc(111 * var(--unit));  }
+.lp-offer--hero strong { font-size: calc(106 * var(--unit)); }
+.lp-offer--hero .lp-offer__more { font-size: calc(37 * var(--unit)); }
+.lp-offer--hero .lp-offer__shipping { position: absolute; left: calc(57 * var(--unit)); top: calc(283 * var(--unit)); width: calc(486 * var(--unit)); font-size: calc(60 * var(--unit)); line-height: calc(76 * var(--unit));  }
+.lp-promo__conditions { position: absolute; left: calc(39 * var(--unit)); top: calc(498.0 * var(--unit)); width: calc(522 * var(--unit)); height: calc(178 * var(--unit));  }
+.lp-promo__eligibility { position: absolute; left: calc(21 * var(--unit)); top: calc(15 * var(--unit)); width: calc(480 * var(--unit)); font-size: calc(25 * var(--unit)); line-height: calc(31 * var(--unit));  }
+.lp-promo__period-label { position: absolute; left: calc(184 * var(--unit)); top: calc(104 * var(--unit)); width: calc(154 * var(--unit)); height: calc(28 * var(--unit)); font-size: calc(16 * var(--unit)); line-height: calc(25 * var(--unit));  }
+.lp-promo__date { position: absolute; left: calc(38 * var(--unit)); top: calc(134 * var(--unit)); width: calc(446 * var(--unit)); font-size: calc(28 * var(--unit)); line-height: calc(37 * var(--unit));  }
+.lp-coupon--promo { position: absolute; left: calc(50 * var(--unit)); top: calc(689.0 * var(--unit)); width: calc(500 * var(--unit)); height: calc(86 * var(--unit));  }
+.lp-coupon--promo .lp-coupon__label { position: absolute; left: calc(23 * var(--unit)); top: calc(16 * var(--unit)); width: calc(232 * var(--unit)); font-size: calc(23 * var(--unit)); line-height: calc(30 * var(--unit));  }
+.lp-coupon--promo .lp-coupon__hint { position: absolute; left: calc(30 * var(--unit)); top: calc(48 * var(--unit)); width: calc(220 * var(--unit)); font-size: calc(14 * var(--unit)); line-height: calc(20 * var(--unit));  }
+.lp-coupon--promo .lp-coupon__code { position: absolute; left: calc(288 * var(--unit)); top: calc(12 * var(--unit)); width: calc(189 * var(--unit)); font-size: calc(57 * var(--unit)); line-height: calc(65 * var(--unit));  }
+.lp-promo__download { position: absolute; left: calc(180.5 * var(--unit)); top: calc(794.0 * var(--unit)); width: calc(239 * var(--unit)); font-size: calc(21 * var(--unit)); line-height: calc(29 * var(--unit));  }
+.lp-badges--promo .lp-badges__link--app_store { position: absolute; left: calc(116 * var(--unit)); top: calc(830.0 * var(--unit)); width: calc(171 * var(--unit)); height: calc(62.84 * var(--unit));  }
+.lp-badges--promo .lp-badges__link--google_play { position: absolute; left: calc(305 * var(--unit)); top: calc(833.0 * var(--unit)); width: calc(185 * var(--unit)); height: calc(54.96 * var(--unit));  }
+.lp-offer--details .lp-offer__label { position: absolute; left: calc(201 * var(--unit)); top: calc(63 * var(--unit)); width: calc(473 * var(--unit)); height: calc(51 * var(--unit)); font-size: calc(28 * var(--unit)); line-height: calc(51 * var(--unit));  }
+.lp-offer--details .lp-offer__date { position: absolute; left: calc(218 * var(--unit)); top: calc(322.0 * var(--unit)); width: calc(448 * var(--unit)); font-size: calc(30 * var(--unit)); line-height: calc(42 * var(--unit));  }
+.lp-coupon--details { position: absolute; left: calc(44 * var(--unit)); top: calc(387.0 * var(--unit)); width: calc(788 * var(--unit)); height: calc(183 * var(--unit));  }
+.lp-coupon--details .lp-coupon__instruction { position: absolute; left: calc(59 * var(--unit)); top: calc(57 * var(--unit)); width: calc(340 * var(--unit)); font-size: calc(26 * var(--unit)); line-height: calc(38 * var(--unit));  }
+.lp-coupon--details .lp-coupon__label { position: absolute; left: calc(447 * var(--unit)); top: calc(25 * var(--unit)); width: calc(292 * var(--unit)); font-size: calc(27 * var(--unit)); line-height: calc(41 * var(--unit));  }
+.lp-coupon--details .lp-coupon__code { position: absolute; left: calc(446 * var(--unit)); top: calc(59 * var(--unit)); width: calc(294 * var(--unit)); font-size: calc(101 * var(--unit)); line-height: calc(111 * var(--unit));  }
+.lp-details__period { position: absolute; left: calc(85 * var(--unit)); top: calc(601.0 * var(--unit)); width: calc(705 * var(--unit)); height: calc(195 * var(--unit));  }
+.lp-details__period-heading { position: absolute; left: 0; top: calc(23 * var(--unit)); width: 100%; display: flex; align-items: center; justify-content: center; gap: calc(12 * var(--unit)); }
+.lp-details__period img { width: calc(70 * var(--unit)); height: calc(55 * var(--unit)); }
+.lp-details__period h3 { font-size: calc(35 * var(--unit)); line-height: calc(51 * var(--unit)); }
+.lp-details__start { position: absolute; left: 0; top: calc(83 * var(--unit)); width: 100%; text-align: center; font-size: calc(30 * var(--unit)); line-height: calc(45 * var(--unit));  }
+.lp-details__end { position: absolute; left: 0; top: calc(129 * var(--unit)); width: 100%; text-align: center; font-size: calc(30 * var(--unit)); line-height: calc(45 * var(--unit));  }
+
+.lp-hero__heading strong { color: var(--lp-rose-text); font-size: calc(34 * var(--unit)); }
+.lp-promo__title { position: absolute; left: calc(60 * var(--unit)); top: calc(80 * var(--unit)); width: calc(480 * var(--unit)); }
+.lp-promo__title img { width: 100%; height: auto; }
+.lp-promo > .lp-canvas { top: calc(-90 * var(--unit)); height: calc(1050 * var(--unit)); }
+
+.lp-coupon__value { display: contents; }
+.lp-coupon--hero::after { content: ""; position: absolute; left: calc(318 * var(--unit)); top: calc(16 * var(--unit)); bottom: calc(16 * var(--unit)); border-left: 1px solid #d996ae; }
+.lp-coupon--hero .lp-coupon__value { position: absolute; left: calc(318 * var(--unit)); top: 0; width: calc(201 * var(--unit)); height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.lp-coupon--hero .lp-coupon__label { display: block; width: calc(160 * var(--unit)); font-size: calc(15 * var(--unit)); line-height: calc(25 * var(--unit)); }
+.lp-coupon--hero .lp-coupon__code { display: block; width: calc(160 * var(--unit)); font-size: calc(48 * var(--unit)); line-height: calc(48 * var(--unit)); }
+
+/* Anchor accent strokes to their labels so they remain aligned at every width. */
+.lp-hero__rays { position: absolute; top: calc(9 * var(--unit)); width: calc(24 * var(--unit)); height: calc(44 * var(--unit)); color: var(--lp-rose-text); pointer-events: none; }
+.lp-hero__rays--left { left: calc(-14 * var(--unit)); }
+.lp-hero__rays--right { right: calc(-14 * var(--unit)); transform: scaleX(-1); }
+.lp-promo__download::before, .lp-promo__download::after { content: ""; position: absolute; top: 50%; height: calc(20 * var(--unit)); border-left: calc(2 * var(--unit)) solid var(--lp-rose); }
+.lp-promo__download::before { left: calc(-12 * var(--unit)); transform: translateY(-50%) rotate(-25deg); }
+.lp-promo__download::after { right: calc(-12 * var(--unit)); transform: translateY(-50%) rotate(25deg); }
+
+/* Shared four-product arrangement from Figma; scale with the 600-unit LP stage. */
+.lp-product-lineup { position: absolute; left: calc(32.9828 * var(--unit)); display: flex; align-items: flex-end; gap: calc(5.0633 * var(--unit)); width: calc(534.0344 * var(--unit)); height: calc(202.5316 * var(--unit)); }
+.lp-product-lineup--hero { top: calc(440 * var(--unit)); }
+.lp-product-lineup--promo { top: calc(235 * var(--unit)); }
+.lp-product-lineup__product { position: relative; flex: none; height: 100%; overflow: hidden; mask-repeat: no-repeat; }
+.lp-product-lineup__product img { position: absolute; max-width: none; object-fit: fill; }

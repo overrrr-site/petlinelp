@@ -1,4 +1,5 @@
 ---
+import { assetPath } from "../../utils/assetPath";
 import { productCategories } from "../../data/products";
 ---
 
@@ -7,7 +8,7 @@ import { productCategories } from "../../data/products";
   <div class="products__search">
     <img
       class="products__search-bg"
-      src="/images/products/search-bg.svg"
+      src={assetPath("/images/products/search-bg.svg")}
       alt=""
       aria-hidden="true"
     />
@@ -21,7 +22,7 @@ import { productCategories } from "../../data/products";
       <h3 class="products__category-label">犬用</h3>
       <img
         class="products__category-icon"
-        src="/images/products/icon-dog.webp"
+        src={assetPath("/images/products/icon-dog.webp")}
         alt="犬アイコン"
       />
     </div>
@@ -31,7 +32,7 @@ import { productCategories } from "../../data/products";
       </h3>
       <img
         class="products__category-icon"
-        src="/images/products/icon-cat.webp"
+        src={assetPath("/images/products/icon-cat.webp")}
         alt="猫アイコン"
       />
     </div>
@@ -48,7 +49,7 @@ import { productCategories } from "../../data/products";
             <div class="products__item-content">
               <img
                 class="products__item-icon"
-                src="/images/products/check.svg"
+                src={assetPath("/images/products/check.svg")}
                 alt=""
               />
               <span class="products__item-name" set:html={cat.label} />
@@ -60,7 +61,7 @@ import { productCategories } from "../../data/products";
               <div class="products__detail-entry">
                 <img
                   class="products__detail-img"
-                  src={item.src}
+                  src={assetPath(item.src)}
                   alt={item.alt}
                   loading="lazy"
                 />
@@ -204,7 +205,7 @@ import { productCategories } from "../../data/products";
     justify-content: space-between;
     background: #ffffff;
     border-radius: 5px;
-    border: 1px solid #c5385f;
+    border: 1px solid #d31c5f;
     width: 100%;
     min-height: 56px;
     padding: 10px 16px;
@@ -229,13 +230,13 @@ import { productCategories } from "../../data/products";
   .products__item-name {
     font-size: 14px;
     font-weight: 700;
-    color: #c5385f;
+    color: var(--color-pink-text);
     line-height: 20px;
   }
   .products__item-plus {
     font-size: 22px;
     font-weight: 300;
-    color: #c5385f;
+    color: var(--color-pink-text);
     line-height: 1;
     flex-shrink: 0;
     margin-left: 8px;
@@ -262,7 +263,7 @@ import { productCategories } from "../../data/products";
   }
   .products__detail {
     background: #ffffff;
-    border: 1px solid #c5385f;
+    border: 1px solid #d31c5f;
     border-top: none;
     border-radius: 0 0 5px 5px;
     padding: 0 20px 20px;
@@ -301,7 +302,7 @@ import { productCategories } from "../../data/products";
     line-height: normal;
   }
   .products__detail-badge--pink {
-    background: #c5385f;
+    background: #d31c5f;
   }
   .products__detail-badge--blue {
     background: #2369d9;
@@ -316,7 +317,7 @@ import { productCategories } from "../../data/products";
     margin: 0;
   }
   .products__detail-name--pink {
-    color: #c5385f;
+    color: var(--color-pink-text);
   }
   .products__detail-name--blue {
     color: #2369d9;

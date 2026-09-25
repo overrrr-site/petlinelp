@@ -1,4 +1,5 @@
 ---
+import { assetPath } from "../../utils/assetPath";
 const worries = [
   "「うちの子にはずっと健康でいてほしいけど、療法食は高くて、続けるのはちょっと…」",
   "「ネットで間違ったフードを買っていることに気付かなかった！」",
@@ -13,7 +14,7 @@ const worries = [
 >
   <div class="absolute top-[40px] left-1/2 -translate-x-1/2 w-[379px] h-[120px]">
     <img
-      src="/images/worries/heading-bubble.svg"
+      src={assetPath("/images/worries/heading-bubble.svg")}
       alt=""
       aria-hidden="true"
       width="377"
@@ -23,7 +24,7 @@ const worries = [
       class="absolute top-0 left-0 block w-full h-[86px]"
     />
     <img
-      src="/images/worries/heading-decoration.svg"
+      src={assetPath("/images/worries/heading-decoration.svg")}
       alt=""
       aria-hidden="true"
       width="29"
@@ -49,7 +50,7 @@ const worries = [
         <>
           {i > 0 && (
             <img
-              src="/images/worries/divider.svg"
+              src={assetPath("/images/worries/divider.svg")}
               alt=""
               aria-hidden="true"
               loading="lazy"
@@ -59,7 +60,7 @@ const worries = [
           )}
           <div class="inline-flex items-start gap-2.5">
             <img
-              src="/images/worries/quote-icon.svg"
+              src={assetPath("/images/worries/quote-icon.svg")}
               alt=""
               aria-hidden="true"
               width="14"
@@ -78,7 +79,7 @@ const worries = [
   </div>
 
   <img
-    src="/images/worries/photo-pet-cute.webp"
+    src={assetPath("/images/worries/photo-pet-cute.webp")}
     alt=""
     aria-hidden="true"
     width="294"
@@ -88,9 +89,9 @@ const worries = [
     class="absolute top-[374px] left-1/2 -translate-x-1/2 block w-[294px] h-[184px] object-contain"
   />
 
-  <div class="absolute top-[532px] left-0 w-[402px] h-[380px]">
+  <div class="absolute top-[532px] left-0 w-full h-[380px]">
     <img
-      src="/images/worries/pink-panel.svg"
+      src={assetPath("/images/worries/pink-panel.svg")}
       alt=""
       aria-hidden="true"
       width="402"
@@ -100,22 +101,22 @@ const worries = [
       class="absolute top-0 left-0 block w-full h-full"
     />
 
-    <div class="absolute top-[60px] left-1/2 -translate-x-1/2 w-[360px] flex flex-col items-center gap-2">
+    <div class="absolute top-[60px] left-1/2 -translate-x-1/2 w-[360px] max-w-[calc(100%-32px)] flex flex-col items-center gap-2">
       <p class="text-white text-2xl font-bold leading-none">そんな時は…</p>
       <p
-        class="text-white text-[32px] font-bold leading-none pb-1 border-b-[3px] border-white"
+        class="worries__recommendation text-white font-black leading-none pb-1 border-b-[3px] border-white"
       >
         どうぶつ病院宅配便を
       </p>
       <p
-        class="text-white text-[32px] font-bold leading-none pb-1 border-b-[3px] border-white"
+        class="worries__recommendation text-white font-black leading-none pb-1 border-b-[3px] border-white"
       >
         ご検討ください
       </p>
     </div>
 
     <img
-      src="/images/worries/photo-vet-illustration.png"
+      src={assetPath("/images/worries/photo-vet-illustration.png")}
       alt=""
       aria-hidden="true"
       width="230"
@@ -126,3 +127,11 @@ const worries = [
     />
   </div>
 </section>
+
+<style>
+  .worries__recommendation {
+    font-family: "Noto Sans JP", var(--font-sans);
+    font-size: clamp(24px, 7.96vw, 32px);
+    white-space: nowrap;
+  }
+</style>

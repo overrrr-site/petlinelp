@@ -1,0 +1,18 @@
+---
+import { CAMPAIGN_CODE } from "../data/campaign";
+import { assetPath } from "../utils/assetPath";
+interface Props { variant: "hero" | "promo" | "details"; }
+const { variant } = Astro.props;
+const asset = variant === "details" ? "campaign" : variant;
+---
+<button type="button" class:list={["lp-coupon", `lp-coupon--${variant}`]}
+  data-copy-code={CAMPAIGN_CODE} aria-label={`キャンペーンコード ${CAMPAIGN_CODE} をコピー`}>
+  <img src={assetPath(`/images/figma/${asset}-coupon.svg`)} alt="" class="lp-coupon__shape" />
+  {variant === "hero" && <span class="lp-coupon__instruction">注文時に<br />キャンペーンコードを入力</span>}
+  {variant === "details" && <span class="lp-coupon__instruction">注文時にこちらのコードを<br />入力してください</span>}
+  <span class="lp-coupon__value">
+  <span class="lp-coupon__label">キャンペーンコード</span>
+  {variant === "promo" && <span class="lp-coupon__hint">ご注文時に入力してください</span>}
+  <strong class="lp-coupon__code">{CAMPAIGN_CODE}</strong>
+  </span>
+</button>

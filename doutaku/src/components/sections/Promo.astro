@@ -1,146 +1,32 @@
 ---
-import { APP_STORE_URL, GOOGLE_PLAY_URL } from "../../data/links";
+import { CAMPAIGN_END_SHORT, CAMPAIGN_NAME } from "../../data/campaign";
+import { assetPath } from "../../utils/assetPath";
+import FreeShippingOffer from "../FreeShippingOffer.astro";
+import ProductLineup from "../ProductLineup.astro";
+import CampaignCoupon from "../CampaignCoupon.astro";
+import AppDownloadBadges from "../AppDownloadBadges.astro";
 ---
-
-<section
-  class="relative w-full h-[779px] bg-cream overflow-hidden"
-  aria-labelledby="promo-heading"
->
-  <div class="absolute top-[35px] left-1/2 -translate-x-1/2 w-[310px] h-[42px]">
-    <p
-      aria-hidden="true"
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-[252px] text-center font-black text-pink text-[23px] leading-none tracking-[-0.46px] [-webkit-text-stroke:5px_#c5385f]"
-    >
-      <span class="tracking-[-0.11px]">初回</span>
-      <span class="text-[30px] tracking-[-0.18px]">1+1</span>
-      <span class="tracking-[-0.11px]">キャンペーン</span>
-    </p>
-    <img
-      src="/images/promo/title-decoration.png"
-      alt=""
-      aria-hidden="true"
-      width="310"
-      height="38"
-      class="absolute top-0 left-1/2 -translate-x-1/2 block w-[310px] h-[38px]"
-    />
-    <p
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-[252px] text-center font-bold text-white text-[23px] leading-none tracking-[-0.46px]"
-    >
-      <span class="tracking-[-0.11px]">初回</span>
-      <span class="text-[30px] tracking-[-0.18px]">1+1</span>
-      <span class="tracking-[-0.11px]">キャンペーン</span>
-    </p>
+<section class="lp-promo-section" aria-labelledby="promo-heading">
+  <div class="lp-stage lp-promo">
+    <img class="lp-canvas" src={assetPath("/images/figma/promo-decoration.svg")} alt="" loading="lazy" />
+    <h2 id="promo-heading" class="lp-promo__title">
+      <span class="sr-only">{CAMPAIGN_NAME}</span>
+      <img src={assetPath("/images/figma/campaign-logo.svg")} alt="" width="759" height="175" loading="lazy" />
+    </h2>
+    <FreeShippingOffer variant="promo" />
+    <ProductLineup position="promo" />
+    <div class="lp-promo__conditions">
+      <p class="lp-promo__eligibility">初めてどうぶつ病院宅配便で<br />購入される方限定</p>
+      <p class="lp-promo__period-label">キャンペーン期間</p>
+      <p class="lp-promo__date">{CAMPAIGN_END_SHORT}</p>
+    </div>
+    <CampaignCoupon variant="promo" />
+    <p class="lp-promo__download">アプリをダウンロード</p>
+    <AppDownloadBadges position="promo" />
   </div>
-
-  <img
-    src="/images/promo/banner-1plus1.png"
-    alt="1個買うと もう1個無料！ 初回1+1キャンペーン"
-    width="352"
-    height="189"
-    loading="lazy"
-    decoding="async"
-    class="absolute top-[59px] left-1/2 -translate-x-1/2 block w-[352px] h-[189px] object-contain"
-  />
-
-  <div class="absolute top-[238px] left-[62px] w-[273px] h-[224px]">
-    <img
-      src="/images/promo/product-back.png"
-      alt=""
-      aria-hidden="true"
-      width="178"
-      height="178"
-      loading="lazy"
-      decoding="async"
-      class="absolute top-[34px] -left-1.5 block w-[178px] h-[178px] object-contain"
-    />
-    <img
-      src="/images/promo/product-front.webp"
-      alt="療法食パッケージ"
-      width="264"
-      height="264"
-      loading="lazy"
-      decoding="async"
-      class="absolute -top-3.5 left-[35px] block w-[264px] h-[264px] object-contain"
-    />
-  </div>
-
-  <div
-    class="absolute top-[472px] left-1/2 -translate-x-1/2 inline-flex items-center justify-center gap-2.5 px-5 py-2 bg-pink"
-  >
-    <p class="text-white text-[15px] font-bold text-center leading-[1.4] tracking-[-0.3px]">
-      <span class="block whitespace-nowrap">初めてどうぶつ病院宅配便で</span>
-      <span class="block whitespace-nowrap">購入される方限定</span>
-    </p>
-  </div>
-
-  <img
-    src="/images/promo/badge-strip.png"
-    alt=""
-    aria-hidden="true"
-    width="343"
-    height="59"
-    loading="lazy"
-    decoding="async"
-    class="absolute top-[540px] left-1/2 -translate-x-1/2 block w-[343px] h-[59px] object-contain"
-  />
-
-  <div class="absolute top-[619px] left-1/2 -translate-x-1/2 w-[362px] h-[54px]">
-    <img
-      src="/images/promo/code-banner-bg.svg"
-      alt=""
-      aria-hidden="true"
-      width="362"
-      height="54"
-      loading="lazy"
-      decoding="async"
-      class="absolute top-0 left-0 block w-full h-full"
-    />
-    <p
-      id="promo-heading"
-      class="absolute top-[9px] left-1/2 -translate-x-1/2 w-[324px] text-navy text-[15px] font-bold text-center leading-[normal]"
-    >
-      キャンペーンコード【32588】の入力が必要です
-    </p>
-  </div>
-
-  <div
-    class="absolute top-[679px] left-1/2 -translate-x-1/2 flex w-[321px] h-[50px] items-center justify-between"
-  >
-    <a
-      href={APP_STORE_URL}
-      aria-label="App Store からダウンロード"
-      class="app-download__badge-link block w-[136px] h-[50px] transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
-      data-cv="app_download"
-      data-store="app_store"
-      data-position="promo"
-    >
-      <img
-        src="/images/footer/badge-appstore.svg"
-        alt="App Store からダウンロード"
-        width="109"
-        height="40"
-        loading="lazy"
-        decoding="async"
-        class="block w-full h-full object-contain"
-      />
-    </a>
-    <a
-      href={GOOGLE_PLAY_URL}
-      aria-label="Google Play で手に入れよう"
-      class="app-download__badge-link block w-[169px] h-[50px] transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink"
-      data-cv="app_download"
-      data-store="google_play"
-      data-position="promo"
-    >
-      <img
-        src="/images/footer/badge-googleplay.svg"
-        alt="Google Play で手に入れよう"
-        width="239"
-        height="71"
-        loading="lazy"
-        decoding="async"
-        class="block w-full h-full object-contain"
-      />
-    </a>
-  </div>
+  <aside class="lp-promo__loyalty" aria-label="常設特典">
+    <p class="lp-promo__loyalty-label">さらに、いつでも</p>
+    <p>ドライタイプは4個目購入時に<br /><strong>1個無料プレゼント</strong></p>
+    <p class="lp-promo__loyalty-notes">※スタンプの有効期限は最終購入日から360日です。<br />※ウェットタイプは対象外です。</p>
+  </aside>
 </section>

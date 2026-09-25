@@ -1,20 +1,31 @@
 ---
+import {
+  CAMPAIGN_CODE,
+  CAMPAIGN_NAME,
+  CAMPAIGN_PERIOD_END,
+  CAMPAIGN_PERIOD_START,
+  FREE_SHIPPING_THRESHOLD,
+} from "../../data/campaign";
+import FreeShippingOffer from "../FreeShippingOffer.astro";
+import CampaignCoupon from "../CampaignCoupon.astro";
+import { assetPath } from "../../utils/assetPath";
+
 const terms = [
   {
     heading: "【キャンペーン対象】",
     items: [
-      "過去にどうぶつ病院宅配便で購入されたことがなく、同一住所による注文がない方が対象です。",
-      "会員登録済みの場合でも、初めて購入される場合は本キャンペーンの対象となります。",
-      "過去に一度でもご購入されている場合や過去に同一住所でご購入されている場合は、購入するブランドや商品が異なっても、本キャンペーンの対象にはなりませんので、ご了承ください。",
+      "どうぶつ病院宅配便アプリまたはサイトではじめて購入される方が対象です。",
+      "会員登録済みの方も、はじめて購入される場合は本キャンペーンの対象となります。",
+      "過去に一度でもご購入いただいている場合は、購入するブランドや製品が異なっても、本キャンペーンの対象にはなりませんので、ご了承ください。",
     ],
   },
   {
     heading: "【キャンペーン詳細】",
     items: [
-      "どうぶつ病院宅配便で初めて商品をご購入いただくと、同じ商品を無料で1つプレゼントいたします。",
-      "お買い物かごに複数の商品がある場合は、最も価格の低い商品が対象となります。",
-      "お買い物かごに同一価格の商品が複数ある場合は、キャンペーン対象は1点のみです。無料分の商品はお選びいただけます。",
-      "無料分の商品はカートには追加されず、ご注文確認画面にてご確認いただけます。",
+      "どうぶつ病院宅配便で初めて商品をご購入いただくと、ご購入商品を「送料ペットライン負担」でお届けいたします。",
+      "上記期間中の初回ご注文分が対象となります。",
+      `ご注文時にキャンペーンコード【${CAMPAIGN_CODE}】の入力が必要です。`,
+      `通常、1回のご注文金額が${FREE_SHIPPING_THRESHOLD}以上の場合、送料は当社負担となります。`,
       "在庫切れ等の理由により、本キャンペーンが適用されない場合がございます。",
       "ご注文画面でご不明な点がございましたら、どうぶつ病院宅配便　カスタマーセンターまでお問い合わせください。",
     ],
@@ -22,116 +33,28 @@ const terms = [
 ];
 
 const closingNotes = [
-  "本キャンペーンで付与される無料分の商品は、無料プレゼントスタンプの付与対象外となります。",
-  "他のキャンペーンコードとは併用できません。",
+  "キャンペーンコードは1種類のみご利用可能です。他のキャンペーンコードとは併用できません。",
   "キャンペーンは予告なく変更・中止する場合があります。",
 ];
 ---
-
-<section
-  id="campaign-details"
-  class="relative w-full bg-[#ebc6cb] pt-[50px] pb-[50px] px-[25px] scroll-mt-4"
-  aria-labelledby="campaign-details-heading"
->
-  <h2 id="campaign-details-heading" class="sr-only">キャンペーン詳細</h2>
-
-  <div class="relative mx-auto w-[340px] h-[42px]">
-    <p
-      aria-hidden="true"
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-[252px] text-center font-black text-pink text-[23px] leading-none tracking-[-0.46px] [-webkit-text-stroke:5px_#c5385f]"
-    >
-      <span class="tracking-[-0.11px]">初回</span>
-      <span class="text-[30px] tracking-[-0.18px]">1+1</span>
-      <span class="tracking-[-0.11px]">キャンペーン</span>
-    </p>
-    <img
-      src="/images/campaign/title-decoration-large.png"
-      alt=""
-      aria-hidden="true"
-      width="340"
-      height="42"
-      class="absolute top-0 left-1/2 -translate-x-1/2 block w-[340px] h-[42px]"
-    />
-    <p
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-[252px] text-center font-bold text-white text-[23px] leading-none tracking-[-0.46px]"
-    >
-      <span class="tracking-[-0.11px]">初回</span>
-      <span class="text-[30px] tracking-[-0.18px]">1+1</span>
-      <span class="tracking-[-0.11px]">キャンペーン</span>
-    </p>
-  </div>
-
-  <img
-    src="/images/campaign/banner-1plus1.png"
-    alt="同じ商品が もう1個もらえる！"
-    width="352"
-    height="189"
-    class="mt-[-15px] mx-auto block w-[352px] h-[189px] object-contain"
-  />
-
-  <button
-    type="button"
-    class="relative mt-[-5px] mx-auto block w-[352px] h-[68px] cursor-pointer transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4a90e2]"
-    data-copy-code="32588"
-    aria-label="キャンペーンコード 32588 をコピー"
-  >
-    <img
-      src="/images/campaign/code-box-outer.svg"
-      alt=""
-      aria-hidden="true"
-      class="absolute top-0 left-0 block w-full h-full"
-    />
-    <img
-      src="/images/campaign/code-box-inner.svg"
-      alt=""
-      aria-hidden="true"
-      class="absolute top-0 left-0 block w-full h-full"
-    />
-    <p
-      class="absolute top-1/2 left-[18px] -translate-y-1/2 text-white text-[13px] font-bold leading-tight text-left"
-    >
-      <span class="block whitespace-nowrap">注文時はこちらのコードを</span>
-      <span class="block whitespace-nowrap">入力してください</span>
-    </p>
-    <img
-      src="/images/campaign/pointer-triangle.svg"
-      alt=""
-      aria-hidden="true"
-      width="10"
-      height="19"
-      class="absolute top-1/2 left-[195px] -translate-y-1/2 block w-[10px] h-[19px]"
-    />
-    <p
-      class="absolute top-1/2 left-[212px] -translate-y-1/2 text-white text-[26px] font-bold leading-none"
-    >
-      【32588】
-    </p>
-  </button>
-
-  <div
-    class="relative mt-[24px] mx-auto flex w-[356px] h-[108px] flex-col items-center justify-center gap-1.5 px-[78px] pt-[21px] pb-[23px] bg-white rounded-[100px]"
-  >
-    <div class="relative flex items-center gap-[6px]">
-      <img
-        src="/images/campaign/icon-calendar.png"
-        alt=""
-        aria-hidden="true"
-        width="31"
-        height="19"
-        class="block w-[31px] h-[19px]"
-      />
-      <span class="text-navy text-[17.5px] font-bold leading-none">
-        キャンペーン期間
-      </span>
+<section id="campaign-details" class="lp-details-section scroll-mt-4" aria-labelledby="campaign-details-heading">
+  <div class="lp-stage lp-details">
+    <h2 id="campaign-details-heading" class="lp-details__heading">
+      <span class="sr-only">{CAMPAIGN_NAME}</span>
+      <img src={assetPath("/images/figma/campaign-logo.svg")} alt="" width="759" height="175" loading="lazy" />
+    </h2>
+    <FreeShippingOffer variant="details" />
+    <CampaignCoupon variant="details" />
+    <div class="lp-details__period">
+      <div class="lp-details__period-heading">
+        <img src={assetPath("/images/figma/megaphone.svg")} alt="" width="92" height="72" loading="lazy" />
+        <h3>キャンペーン期間</h3>
+      </div>
+      <p class="lp-details__start">{CAMPAIGN_PERIOD_START}</p>
+      <p class="lp-details__end">{CAMPAIGN_PERIOD_END}</p>
     </div>
-    <p
-      class="text-navy text-base font-bold text-center leading-6 tracking-[0.96px]"
-    >
-      2026年5月8日(金) 9:00〜<br />2026年5月31日(日) 23:59
-    </p>
   </div>
-
-  <div class="mt-[28px] flex flex-col gap-4 text-navy text-[15px] leading-[1.6]">
+  <div class="lp-details__terms flex flex-col gap-4 text-navy text-[15px] leading-[1.6]">
     {
       terms.map((block) => (
         <div class="flex flex-col gap-1">

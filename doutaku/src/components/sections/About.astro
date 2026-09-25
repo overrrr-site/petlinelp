@@ -1,4 +1,5 @@
 ---
+import { assetPath } from "../../utils/assetPath";
 const sliderProducts = [1, 2, 3, 4, 5, 6];
 const sliderRepeat = 3;
 ---
@@ -9,7 +10,7 @@ const sliderRepeat = 3;
 >
   <h2
     id="about-heading"
-    class="absolute top-[10px] left-1/2 -translate-x-1/2 text-pink text-[28px] font-bold leading-none whitespace-nowrap"
+    class="absolute top-[10px] left-1/2 -translate-x-1/2 text-pink-text text-[28px] font-bold leading-none whitespace-nowrap"
   >
     どうぶつ病院宅配便とは？
   </h2>
@@ -24,7 +25,7 @@ const sliderRepeat = 3;
         Array.from({ length: sliderRepeat }).map(() =>
           sliderProducts.map((n) => (
             <img
-              src={`/images/about/slider/product-${n}.webp`}
+              src={assetPath(`/images/about/slider/product-${n}.webp`)}
               alt=""
               width="160"
               height="186"
@@ -41,7 +42,7 @@ const sliderRepeat = 3;
   </div>
 
   <p
-    class="absolute top-[268px] left-1/2 -translate-x-1/2 w-[286px] text-pink text-[20px] font-bold text-center leading-[28px] whitespace-nowrap"
+    class="absolute top-[268px] left-1/2 -translate-x-1/2 w-[286px] text-pink-text text-[20px] font-bold text-center leading-[28px] whitespace-nowrap"
   >
     療法食をお得に続ける、<br />
     メーカー公式オンラインストア
@@ -95,3 +96,11 @@ const sliderRepeat = 3;
     requestAnimationFrame(animate);
   })();
 </script>
+
+<style>
+  /* Clip the baked-in white margin outside each rounded product card.
+     The product photo and the white area inside the card remain untouched. */
+  [data-about-card] {
+    clip-path: inset(1px 2px 3px round 10px);
+  }
+</style>

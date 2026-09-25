@@ -1,0 +1,18 @@
+---
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from "../data/links";
+import { assetPath } from "../utils/assetPath";
+interface Props { position: "hero" | "promo"; }
+const { position } = Astro.props;
+const stores = [
+  { key: "app_store", url: APP_STORE_URL, image: "badge-appstore.svg", label: "App Store からダウンロード", width: 109, height: 40 },
+  { key: "google_play", url: GOOGLE_PLAY_URL, image: "badge-googleplay.svg", label: "Google Play で手に入れよう", width: 239, height: 71 },
+];
+---
+<div class:list={["lp-badges", `lp-badges--${position}`]}>
+  {stores.map(store => <a href={store.url} aria-label={store.label}
+    class:list={["app-download__badge-link", "lp-badges__link", `lp-badges__link--${store.key}`]}
+    data-cv="app_download" data-store={store.key} data-position={position}>
+    <img src={assetPath(`/images/footer/${store.image}`)} alt={store.label}
+      width={store.width} height={store.height} loading={position === "hero" ? "eager" : "lazy"} decoding="async" />
+  </a>)}
+</div>

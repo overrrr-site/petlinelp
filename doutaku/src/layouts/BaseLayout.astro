@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import "../styles/figma-campaign.css";
+import { CAMPAIGN_NAME, CAMPAIGN_END_SHORT } from "../data/campaign";
 
 interface Props {
   title?: string;
@@ -8,9 +10,9 @@ interface Props {
 }
 
 const {
-  title = "どうぶつ病院宅配便",
-  description = "ペットのお薬・処方食をご自宅までお届け。動物病院と提携した宅配便サービス。",
-  ogImage = "/images/hero/campaign-banner.png",
+  title = `どうぶつ病院宅配便 ${CAMPAIGN_NAME}｜ペットライン`,
+  description = `初めてのご注文は950円分以上の送料を当社負担。療法食をメーカー公式オンラインストア「どうぶつ病院宅配便」でお得に続けられます。${CAMPAIGN_END_SHORT}。`,
+  ogImage = "/images/lineup/four-products.png",
 } = Astro.props;
 
 const site = Astro.site ?? new URL("https://lp.petline.co.jp");
@@ -44,7 +46,7 @@ const resolvedOgImage = /^https?:\/\//.test(ogImage)
     <link rel="shortcut icon" href={assetPath("/favicon.ico")} />
     <link rel="apple-touch-icon" sizes="180x180" href={assetPath("/apple-touch-icon.png")} />
     <link rel="manifest" href={assetPath("/site.webmanifest")} />
-    <meta name="theme-color" content="#c5385f" />
+    <meta name="theme-color" content="#d31c5f" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
@@ -60,8 +62,8 @@ const resolvedOgImage = /^https?:\/\//.test(ogImage)
     <link
       rel="preload"
       as="image"
-      href={assetPath("/images/hero/product-front.webp")}
-      type="image/webp"
+      href={assetPath("/images/lineup/care-dog.png")}
+      type="image/png"
       fetchpriority="high"
     />
 
@@ -69,7 +71,7 @@ const resolvedOgImage = /^https?:\/\//.test(ogImage)
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Inter:wght@700&family=Noto+Sans+JP:wght@900&family=Roboto:wght@700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
     />
   </head>
   <body class="bg-neutral-100 text-navy">
