@@ -26,13 +26,14 @@ const notes = [
     </h1>
     <FreeShippingOffer variant="hero" />
     <ProductLineup position="hero" />
+    <p id="hero-shipping-note" class="lp-hero__shipping-note"><span aria-hidden="true">※</span><span>沖縄県は通常送料が2,500円（税込）かかりますが、キャンペーンの参加で2,500円分の送料を当社が負担いたします。</span></p>
     <CampaignCoupon variant="hero" />
-    <p class="lp-hero__member-note">※会員登録には動物病院コードが必要です</p>
+    <p class="lp-hero__member-note">会員登録には動物病院コードが必要です</p>
     <div class="lp-hero__cta-background" aria-hidden="true"></div>
     <img class="lp-canvas lp-hero__cta-decoration" src={assetPath("/images/figma/hero-cta-decoration.svg")} alt="" />
     <h2 class="lp-hero__cta-title">まずはアプリをダウンロード</h2>
     <AppDownloadBadges position="hero" />
-    <a class="lp-hero__web" href={SHOP_URL}>Webサイトから購入する方はこちら</a>
+    <a class="lp-hero__web" href={SHOP_URL} data-ec-link>Webサイトから購入する方はこちら</a>
   </div>
   <StoreRatings />
   <ul class="lp-hero__notes">

@@ -53,14 +53,16 @@
 .lp-coupon--promo .lp-coupon__label, .lp-coupon--promo .lp-coupon__code { color: white; }
 .lp-coupon--promo .lp-coupon__hint { font-weight: 500; white-space: nowrap; text-align: center; }
 .lp-coupon--hero .lp-coupon__code, .lp-coupon--promo .lp-coupon__code { font-weight: 700; }
-.lp-hero__member-note { position: absolute; left: calc(30 * var(--unit)); top: calc(843.0 * var(--unit)); width: calc(540 * var(--unit)); font-size: calc(18 * var(--unit)); line-height: calc(28 * var(--unit)); text-align: center; font-weight: 700; color: var(--lp-rose-text); }
-.lp-hero { aspect-ratio: 600 / 1108; }
+.lp-hero__member-note { position: absolute; left: calc(30 * var(--unit)); top: calc(843.0 * var(--unit) + var(--hero-note-space)); width: calc(540 * var(--unit)); font-size: calc(18 * var(--unit)); line-height: calc(28 * var(--unit)); text-align: center; font-weight: 700; color: var(--lp-rose-text); }
+.lp-hero { --hero-note-space: calc(70 * var(--unit)); aspect-ratio: 600 / 1178; }
 .lp-promo { aspect-ratio: 600 / 928; }
 .lp-hero > .lp-canvas { top: calc(-20.0 * var(--unit)); height: calc(1050 * var(--unit)); }
-.lp-hero .lp-hero__cta-decoration { top: calc(58.0 * var(--unit)); }
+.lp-hero .lp-hero__cta-decoration { top: calc(58.0 * var(--unit) + var(--hero-note-space)); }
 .lp-hero__heading { position: absolute; left: calc(70 * var(--unit)); top: calc(87 * var(--unit)); width: calc(462 * var(--unit));  font-size: calc(24 * var(--unit));  line-height: calc(58 * var(--unit));  text-align: center;  white-space: nowrap; }
 .lp-details__heading img { width: 100%; height: auto; }
 .lp-details__heading { position: absolute; left: calc(77.5 * var(--unit)); top: calc(134 * var(--unit)); width: calc(720 * var(--unit)); }
+.lp-hero__shipping-note { position: absolute; left: calc(41 * var(--unit)); bottom: calc(388 * var(--unit) + 16px); width: calc(519 * var(--unit)); display: flex; gap: 2px; font-size: max(11px, calc(18 * var(--unit))); line-height: 1.6; }
+.lp-offer__note-mark { position: absolute; top: calc(8 * var(--unit)); right: calc(-20 * var(--unit)); font-size: calc(20 * var(--unit)); line-height: 1; }
 .lp-hero__notes { margin: 0; padding: 20px 25px 32px; font-size: 13px; line-height: 1.65; list-style: none; }
 .lp-hero__notes li { display: flex; gap: 2px; }
 .lp-hero__notes a { text-decoration: underline; text-underline-offset: 2px; }
@@ -95,13 +97,13 @@
 .lp-hero__logo { position: absolute; left: calc(232 * var(--unit)); top: calc(6 * var(--unit)); width: calc(136 * var(--unit)); height: calc(71.238 * var(--unit));  }
 .lp-offer--hero .lp-offer__label { position: absolute; left: calc(152 * var(--unit)); top: calc(152 * var(--unit)); width: calc(296 * var(--unit)); height: calc(32 * var(--unit)); font-size: calc(18 * var(--unit)); line-height: calc(32 * var(--unit));  }
 .lp-offer--hero .lp-offer__date { position: absolute; left: calc(147 * var(--unit)); top: calc(364.0 * var(--unit)); width: calc(305 * var(--unit)); font-size: calc(21 * var(--unit)); line-height: calc(31 * var(--unit));  }
-.lp-coupon--hero { position: absolute; left: calc(41 * var(--unit)); top: calc(720.0 * var(--unit)); width: calc(519 * var(--unit)); height: calc(97 * var(--unit));  }
+.lp-coupon--hero { position: absolute; left: calc(41 * var(--unit)); top: calc(720.0 * var(--unit) + var(--hero-note-space)); width: calc(519 * var(--unit)); height: calc(97 * var(--unit));  }
 .lp-coupon--hero .lp-coupon__instruction { position: absolute; left: calc(37 * var(--unit)); top: calc(23 * var(--unit)); width: calc(263 * var(--unit)); font-size: calc(21 * var(--unit)); line-height: calc(27 * var(--unit));  }
-.lp-hero__cta-background { position: absolute; left: calc(35 * var(--unit)); top: calc(887.0 * var(--unit)); width: calc(530 * var(--unit)); height: calc(137 * var(--unit));  }
-.lp-hero__cta-title { position: absolute; left: calc(158 * var(--unit)); top: calc(905.0 * var(--unit)); width: calc(323 * var(--unit)); font-size: calc(23 * var(--unit)); line-height: calc(35 * var(--unit));  }
-.lp-badges--hero .lp-badges__link--app_store { position: absolute; left: calc(110 * var(--unit)); top: calc(949.0 * var(--unit)); width: calc(178 * var(--unit)); height: calc(65.4 * var(--unit));  }
-.lp-badges--hero .lp-badges__link--google_play { position: absolute; left: calc(310 * var(--unit)); top: calc(952.0 * var(--unit)); width: calc(181 * var(--unit)); height: calc(53.77 * var(--unit));  }
-.lp-hero__web { position: absolute; left: calc(138 * var(--unit)); top: calc(1047.0 * var(--unit)); width: calc(307 * var(--unit)); font-size: calc(18.5 * var(--unit)); line-height: calc(28 * var(--unit));  }
+.lp-hero__cta-background { position: absolute; left: calc(35 * var(--unit)); top: calc(887.0 * var(--unit) + var(--hero-note-space)); width: calc(530 * var(--unit)); height: calc(137 * var(--unit));  }
+.lp-hero__cta-title { position: absolute; left: calc(158 * var(--unit)); top: calc(905.0 * var(--unit) + var(--hero-note-space)); width: calc(323 * var(--unit)); font-size: calc(23 * var(--unit)); line-height: calc(35 * var(--unit));  }
+.lp-badges--hero .lp-badges__link--app_store { position: absolute; left: calc(110 * var(--unit)); top: calc(949.0 * var(--unit) + var(--hero-note-space)); width: calc(178 * var(--unit)); height: calc(65.4 * var(--unit));  }
+.lp-badges--hero .lp-badges__link--google_play { position: absolute; left: calc(310 * var(--unit)); top: calc(952.0 * var(--unit) + var(--hero-note-space)); width: calc(181 * var(--unit)); height: calc(53.77 * var(--unit));  }
+.lp-hero__web { position: absolute; left: calc(138 * var(--unit)); top: calc(1047.0 * var(--unit) + var(--hero-note-space)); width: calc(307 * var(--unit)); font-size: calc(18.5 * var(--unit)); line-height: calc(28 * var(--unit));  }
 .lp-offer--promo .lp-offer__label { position: absolute; left: calc(152 * var(--unit)); top: calc(30 * var(--unit)); width: calc(296 * var(--unit)); height: calc(32 * var(--unit)); font-size: calc(18 * var(--unit)); line-height: calc(32 * var(--unit));  }
 .lp-offer--hero .lp-offer__amount { position: absolute; left: calc(87 * var(--unit)); top: calc(181 * var(--unit)); width: calc(429 * var(--unit)); font-size: calc(44 * var(--unit)); line-height: calc(111 * var(--unit));  }
 .lp-offer--hero strong { font-size: calc(106 * var(--unit)); }

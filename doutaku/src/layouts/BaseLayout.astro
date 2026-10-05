@@ -87,5 +87,13 @@ const resolvedOgImage = /^https?:\/\//.test(ogImage)
     <main class="mx-auto w-full max-w-[var(--container-sp)] bg-white shadow-sm">
       <slot />
     </main>
+    <script>
+      import { buildShopUrl } from "../data/links";
+
+      const shopUrl = buildShopUrl(window.location.search);
+      document.querySelectorAll<HTMLAnchorElement>("a[data-ec-link]").forEach((link) => {
+        link.href = shopUrl;
+      });
+    </script>
   </body>
 </html>

@@ -7,7 +7,7 @@ const { variant } = Astro.props;
   <p class="lp-offer__label">期間限定・新規ご購入者様限定</p>
   {variant === "hero" && <>
     <p class="lp-offer__amount"><strong>950</strong><span>円分</span><span class="lp-offer__more">以上の</span></p>
-    <p class="lp-offer__shipping">送料を当社負担！</p>
+    <p class="lp-offer__shipping" aria-describedby="hero-shipping-note">送料を当社負担！<sup class="lp-offer__note-mark" aria-hidden="true">※</sup></p>
   </>}
   {variant !== "promo" && <p class="lp-offer__date">{CAMPAIGN_END_SHORT}</p>}
 </div>
